@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initStickyHeader();
     initScrollAnimations();
     initCountrySelector();
+    initDetailsHover();
 });
 
 /* ===================================
@@ -471,4 +472,23 @@ function initCountrySelector() {
         if (overlay) overlay.classList.remove('active');
         document.body.style.overflow = '';
     }
+}
+
+/* ===================================
+   Details Hover (Mega Menu)
+   =================================== */
+function initDetailsHover() {
+    const details = document.querySelectorAll('details.mega-menu');
+
+    details.forEach(detail => {
+        detail.addEventListener('mouseenter', () => {
+            detail.setAttribute('open', 'true');
+            detail.setAttribute('aria-expanded', 'true');
+        });
+
+        detail.addEventListener('mouseleave', () => {
+            detail.removeAttribute('open');
+            detail.setAttribute('aria-expanded', 'false');
+        });
+    });
 }

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi" class="js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Menu Discover Hover</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Debug border */
+        .mega-menu {
+            border: 2px solid blue;
+            display: inline-block;
+            position: relative;
+        }
+
+        /* Ẩn submenu mặc định */
+        .single_menu_top_new details:not([open]):not(.opening):not(.closing):not(:hover) .header__submenu {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transform: translateY(-8px) !important;
+            pointer-events: none !important;
+        }
+
+        /* Config submenu */
+        .single_menu_top_new details .header__submenu {
+            transition: opacity .25s ease-out, visibility .25s ease-out, transform .25s ease-out !important;
+            animation: none !important;
+            display: block !important;
+            position: absolute !important;
+            background: white;
+            border: 2px solid red;
+            padding: 20px;
+            min-width: 200px;
+            top: 100%;
+            left: 0;
+        }
+
+        /* Hiển thị khi click (details[open]) */
+        .single_menu_top_new details[open] .header__submenu {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+            pointer-events: auto !important;
+        }
+
+        /* Hiển thị khi hover */
+        .single_menu_top_new .mega-menu:hover .header__submenu,
+        .single_menu_top_new .header__submenu:hover {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+            pointer-events: auto !important;
+        }
+
+        summary {
+            cursor: pointer;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            list-style: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .debug-info {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #333;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 12px;
+            max-width: 300px;
+        }
+
+        .status {
+            margin: 5px 0;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        .status.success {
+            background: #22c55e;
+        }
+
+        .status.error {
+            background: #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-info">
+        <h4 style="margin: 0 0 10px 0;">Debug Info</h4>
+        <div class="status" id="hoverStatus">Hover: Waiting...</div>
+        <div class="status" id="clickStatus">Click: Waiting...</div>
+        <p style="margin: 10px 0 5px 0; font-size: 11px;">
+            Nhấn <strong>Ctrl+Shift+R</strong> để hard refresh
+        </p>
+    </div>
+
+    <h1>Test Menu Discover - Hover và Click</h1>
+    <p><strong>Test 1:</strong> Hover vào nút "Discover" → Submenu nên hiện (màu đỏ)</p>
+    <p><strong>Test 2:</strong> Click vào nút "Discover" → Submenu nên hiện</p>
+    
+    <div class="single_menu_top_new">
+        <div class="mega-menu">
+            <details id="test-details">
+                <summary id="test-summary">
+                    Discover
+                </summary>
+
+                <div id="test-submenu" class="header__submenu">
+                    <h3>Submenu Content</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Podcast</a></li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <script>
+        const details = document.getElementById('test-details');
+        const summary = document.getElementById('test-summary');
+        const submenu = document.getElementById('test-submenu');
+        const megaMenu = document.querySelector('.mega-menu');
+        const hoverStatus = document.getElementById('hoverStatus');
+        const clickStatus = document.getElementById('clickStatus');
+
+        // Monitor hover
+        megaMenu.addEventListener('mouseenter', function() {
+            setTimeout(() => {
+                const styles = window.getComputedStyle(submenu);
+                const isVisible = styles.opacity !== '0' && styles.visibility !== 'hidden';
+                
+                hoverStatus.textContent = 'Hover: ' + (isVisible ? '✅ HIỂN THỊ' : '❌ KHÔNG HIỂN THỊ');
+                hoverStatus.className = 'status ' + (isVisible ? 'success' : 'error');
+                
+                console.log('=== HOVER TEST ===');
+                console.log('Opacity:', styles.opacity);
+                console.log('Visibility:', styles.visibility);
+                console.log('Transform:', styles.transform);
+                console.log('Pointer Events:', styles.pointerEvents);
+            }, 50);
+        });
+
+        megaMenu.addEventListener('mouseleave', function() {
+            hoverStatus.textContent = 'Hover: Waiting...';
+            hoverStatus.className = 'status';
+        });
+
+        // Monitor click
+        details.addEventListener('toggle', function() {
+            const isOpen = details.hasAttribute('open');
+            
+            setTimeout(() => {
+                const styles = window.getComputedStyle(submenu);
+                const isVisible = styles.opacity !== '0' && styles.visibility !== 'hidden';
+                
+                clickStatus.textContent = 'Click: ' + (isVisible ? '✅ HIỂN THỊ' : '❌ KHÔNG HIỂN THỊ');
+                clickStatus.className = 'status ' + (isVisible ? 'success' : 'error');
+                
+                console.log('=== CLICK TEST ===');
+                console.log('Details open:', isOpen);
+                console.log('Opacity:', styles.opacity);
+                console.log('Visibility:', styles.visibility);
+            }, 50);
+        });
+    </script>
+</body>
+</html>

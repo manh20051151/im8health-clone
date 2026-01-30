@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Mega Menu Hover</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .test-container {
+            border: 2px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .test-info {
+            background: #f0f0f0;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body class="js">
+    <div class="test-info">
+        <h2>Test Mega Menu Hover Effect</h2>
+        <p><strong>Hướng dẫn:</strong> Di chuột vào link "Shop" để kiểm tra xem mega menu có hiện ra không.</p>
+        <p><strong>Trạng thái:</strong> CSS đã được cập nhật với selector có độ ưu tiên cao hơn.</p>
+    </div>
+
+    <div class="test-container">
+        <nav class="header__inline-menu header_left_new" role="navigation">
+            <ul class="list-menu list-menu--inline" role="list">
+                <li class="custom_mega_menu_top_new custom_mega_menu_top_only_new">
+                    <header-menu>
+                        <div id="Details-HeaderMenu-1" class="mega-menu">
+                            <a
+                                id="HeaderMenu-shop"
+                                class="header__menu-item header__menu-item_main_menu list-menu__item link focus-inset header__active-menu-item_new"
+                                href="javascript:void(0)"
+                            >
+                                <span class="header__active-menu-item">Shop</span>
+                                <svg width="12" height="12" viewBox="0 0 12 12" class="icon icon-caret" fill="none">
+                                    <path d="M9 4.3125L5.625 7.6875L2.25 4.3125" stroke="#50000B" stroke-width="2" stroke-linecap="square"></path>
+                                </svg>
+                            </a>
+
+                            <div
+                                id="MegaMenu-Content-1"
+                                class="mega-menu__content Header_mega_menu_inner_new color-scheme-1 gradient motion-reduce global-settings-popup"
+                                tabindex="-1"
+                                style="top: 36px"
+                            >
+                                <div
+                                    class="Header_mega_menu_maindetail_new optiscroll is-enabled"
+                                    style="max-height: calc(-100px + 100vh); height: calc(-100px + 100vh);"
+                                >
+                                    <div class="optiscroll-content" style="right: -15px; bottom: -15px">
+                                        <div class="Header_mega_menu_innerdetail_new">
+                                            <div style="padding: 40px; background: white; border-radius: 8px;">
+                                                <h3 style="margin-top: 0; color: #50000B;">Mega Menu Content</h3>
+                                                <p>Đây là nội dung của mega menu. Nếu bạn thấy nội dung này khi hover vào "Shop", nghĩa là CSS hover đã hoạt động!</p>
+                                                <ul style="list-style: disc; padding-left: 20px;">
+                                                    <li>Daily Ultimate Essentials</li>
+                                                    <li>Daily Ultimate Longevity</li>
+                                                    <li>The Beckham Stack</li>
+                                                    <li>Reviews</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </header-menu>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="test-info" style="background: #fff3cd;">
+        <h3>Debug Info</h3>
+        <p><strong>Selector được sử dụng:</strong></p>
+        <code>.js .custom_mega_menu_top_only_new .mega-menu:hover .mega-menu__content</code>
+        <p><strong>Các thuộc tính được set khi hover:</strong></p>
+        <ul>
+            <li>opacity: 1 !important</li>
+            <li>visibility: visible !important</li>
+            <li>transform: translateY(0) !important</li>
+            <li>pointer-events: auto !important</li>
+            <li>z-index: 999 !important</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -4192,6 +4192,12 @@ a.button.button_inverse_primary {
     border-color: var(--os-red-algae);
     box-shadow: 0 8px 32px rgba(164, 0, 17, 0.18), 0 2px 8px rgba(80, 0, 11, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
+
+.organ-systems__card[data-product="essentials"].organ-systems__card--active {
+    background: linear-gradient(145deg, var(--os-red-algae) 0%, var(--os-burgundy) 60%, var(--os-burgundy-dark) 100%);
+    border-color: var(--os-red-algae);
+    box-shadow: 0 8px 32px rgba(164, 0, 17, 0.18), 0 2px 8px rgba(80, 0, 11, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
 .organ-systems__card {
     position: relative;
     display: flex;
@@ -4317,13 +4323,6 @@ a.button.button_inverse_primary {
     pointer-events: none;
 }
 
-.organ-systems__detail-content--active {
-    display: block;
-    animation: osDetailFadeIn var(--os-duration-normal) var(--os-ease-out);
-}
-
-
-
 @keyframes osDetailFadeIn {
     0% {
         opacity: 0;
@@ -4339,6 +4338,10 @@ a.button.button_inverse_primary {
     display: none;
     position: relative;
     padding: 36px 28px;
+}
+.organ-systems__detail-content--active {
+    display: block;
+    animation: osDetailFadeIn var(--os-duration-normal) var(--os-ease-out);
 }
 .organ-systems__detail-bg-icon {
     position: absolute;

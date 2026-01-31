@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initCountrySelector();
     initDetailsHover();
     initCounterAnimations();
+    initOrganSystemsCards();
 });
 
 /* ===================================
@@ -643,5 +644,44 @@ function initCounterAnimations() {
 
     counters.forEach(counter => {
         observer.observe(counter);
+    });
+}
+
+/* ===================================
+   Organ Systems: click card → hiện detail tương ứng
+   =================================== */
+function initOrganSystemsCards() {
+    document.querySelectorAll('.organ-systems__card').forEach(function (card) {
+        card.addEventListener('click', function () {
+            var index = this.getAttribute('data-index');
+            var product = this.getAttribute('data-product');
+            if (index === null || product === null) return;
+
+            var interactive = this.closest('.organ-systems__interactive');
+            if (!interactive) return;
+
+            var grid = interactive.querySelector('.organ-systems__grid');
+            var detailContainer = interactive.querySelector('.organ-systems__detail');
+            if (!grid || !detailContainer) return;
+
+            /* Bỏ active ở tất cả card trong grid này */
+            grid.querySelectorAll('.organ-systems__card').forEach(function (c) {
+                c.classList.remove('organ-systems__card--active');
+                c.setAttribute('aria-selected', 'false');
+            });
+            this.classList.add('organ-systems__card--active');
+            this.setAttribute('aria-selected', 'true');
+
+            /* Ẩn tất cả detail, chỉ hiện detail có data-detail-index và data-product trùng */
+            detailContainer.querySelectorAll('.organ-systems__detail-content').forEach(function (content) {
+                var detailIndex = content.getAttribute('data-detail-index');
+                var detailProduct = content.getAttribute('data-product');
+                if (detailIndex === index && detailProduct === product) {
+                    content.classList.add('organ-systems__detail-content--active');
+                } else {
+                    content.classList.remove('organ-systems__detail-content--active');
+                }
+            });
+        });
     });
 }

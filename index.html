@@ -22,6 +22,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   </head>
   <body class="js">
     <!-- Country Selector Overlay -->
@@ -8573,31 +8574,14 @@ Single-Serve Sachets
                                 </div></li></ul>
                       </div>
                     </div>
-                  </div><script type="module">
-                    // Swiper is now globally imported in theme.liquid
-                    new Swiper('.Product_meta_real_reviews_video_slider', {
-                      loop: false,
-                      grabCursor: false,
-                      spaceBetween: 12,
-                      slidesPerGroup: 1,
-                      slidesPerView: "auto",
-                      watchSlidesProgress: true,
-                      draggable:!0,
-                      autoHeight:!1,
-                      watchOverflow:!0,
-                      threshold:10,
-                      mousewheel:{
-                        forceToAxis:!0
-                      }
-                    });                         
-                  </script>
+                  </div>
                   <div class="meta_real_reviews_video_main_new" bis_skin_checked="1">
                     <div class="meta_real_reviews_video_inner_new video_play_list_new" bis_skin_checked="1">
                       <div class="meta_real_reviews_video_title_new" bis_skin_checked="1">
                         What our IM8 Ambassadors are saying
                       </div>
                       <div class="meta_real_reviews_video_loops_new" bis_skin_checked="1">
-                        <div class="swiper Product_meta_real_reviews_video_slider swiper-initialized swiper-horizontal swiper-watch-progress swiper-backface-hidden" bis_skin_checked="1">
+                        <div class="swiper Product_meta_real_reviews_video_slider" bis_skin_checked="1">
                           <div class="swiper-wrapper" id="swiper-wrapper-4294bf076a10386cc" aria-live="polite" style="transform: translate3d(0px, 0px, 0px);" bis_skin_checked="1"><div class="swiper-slide meta_real_reviews_video_loops_mainstatic_new swiper-slide-visible swiper-slide-fully-visible swiper-slide-active" role="group" aria-label="1 / 6" style="margin-right: 12px;" bis_skin_checked="1">
                                   <div class="meta_real_reviews_video_loops_innerstatic_new" bis_skin_checked="1"><div class="meta_real_reviews_video_loops_innerstatic_imagevideo_new people_popup_open" video_id="popup_video_1" bis_skin_checked="1">
                                         <img src="//im8health.com/cdn/shop/files/preview_images/thm-expert_robinB2.jpg?v=1731999065" width="" height="" alt="">
@@ -8643,6 +8627,29 @@ Single-Serve Sachets
                                 </div></div>
                         <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
                       </div>
+                      <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                          if (typeof Swiper !== 'undefined') {
+                            new Swiper('.Product_meta_real_reviews_video_slider', {
+                              loop: false,
+                              grabCursor: true,
+                              allowTouchMove: true,
+                              noSwipingSelector: '',
+                              spaceBetween: 12,
+                              slidesPerGroup: 1,
+                              slidesPerView: "auto",
+                              watchSlidesProgress: true,
+                              draggable: true,
+                              autoHeight: false,
+                              watchOverflow: true,
+                              threshold: 10,
+                              resistance: true,
+                              resistanceRatio: 0.85,
+                              mousewheel: { forceToAxis: true }
+                            });
+                          }
+                        });
+                      </script>
 
                       <!-- popup -->
                       <div class="people_popup_overlay_new" bis_skin_checked="1"></div><div class="meta_real_reviews_mainpopup_new popup_video_1_open" bis_skin_checked="1">
@@ -9951,6 +9958,7 @@ Single-Serve Sachets
     </footer>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="/js/main.js"></script>
   </body>
 </html>

@@ -3735,27 +3735,48 @@ button, input, select, textarea {
         border-radius: 16px;
     }
         .product--thumbnail_slider .slider-mobile-gutter .slider-button[disabled] {
-        display: none !important;
+        opacity: 0.3 !important;
+        cursor: not-allowed !important;
     }
         .product--thumbnail_slider .slider-mobile-gutter .slider-button.slider-button--prev {
         position: absolute;
-        left: 0 !important;
-        height: 100%;
+        /* top: 50% !important; */
+        left: -20px !important;
+        /* transform: translateY(-50%) rotate(-90deg) !important; */
+        /* height: 40px !important; */
+        /* width: 40px !important; */
         right: auto !important;
-        background: #fff;
+        background: #fff !important;
         padding: 0 !important;
+        z-index: 10 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        /* border: 2px solid #E5E5E5 !important; */
+        /* border-radius: 50% !important; */
+        /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important; */
         width: 34px;
-        z-index: 1;
+        height: 100%;
     }
         .product--thumbnail_slider .slider-mobile-gutter .slider-button.slider-button--next {
         position: absolute;
-        left: auto !important;
-        height: 100%;
-        right: 0 !important;
-        background: #fff;
+        /* top: 50% !important; */
+        left: 723px !important;
+        /* transform: translateY(-50%) rotate(-90deg) !important; */
+        /* height: 40px !important; */
+        /* width: 40px !important; */
+        right: auto !important;
+        background: #fff !important;
         padding: 0 !important;
+        z-index: 10 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        /* border: 2px solid #E5E5E5 !important; */
+        /* border-radius: 50% !important; */
+        /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important; */
         width: 34px;
-        z-index: 1;
+        height: 100%;
     }
         .product--thumbnail_slider .thumbnail-slider {
         display: flex !important;

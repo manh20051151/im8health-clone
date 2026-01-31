@@ -4561,7 +4561,117 @@
 </svg>
 
       </button>
-    </slider-component></media-gallery>
+    </slider-component>
+    
+    <script>
+    // Chức năng: Click vào thumbnail để hiển thị ảnh tương ứng ở gallery chính
+    document.addEventListener('DOMContentLoaded', function() {
+        const thumbnails = document.querySelectorAll('#Slider-Thumbnails-template--17653238202535__main .thumbnail');
+        const gallerySlider = document.querySelector('#Slider-Gallery-template--17653238202535__main');
+        
+        thumbnails.forEach(function(thumbnail) {
+            thumbnail.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Lấy data-target từ li cha của thumbnail
+                const parentLi = this.closest('li');
+                const targetId = parentLi.getAttribute('data-target');
+                
+                if (!targetId) return;
+                
+                // Tìm slide tương ứng trong gallery chính
+                const targetSlide = document.getElementById('Slide-' + targetId);
+                
+                if (targetSlide && gallerySlider) {
+                    // Xóa class is-active từ tất cả slides
+                    const allSlides = gallerySlider.querySelectorAll('.product__media-item');
+                    allSlides.forEach(function(slide) {
+                        slide.classList.remove('is-active');
+                    });
+                    
+                    // Thêm class is-active vào slide được chọn
+                    targetSlide.classList.add('is-active');
+                    
+                    // Scroll đến slide
+                    targetSlide.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'nearest', 
+                        inline: 'start' 
+                    });
+                    
+                    // Cập nhật aria-current cho thumbnails
+                    const allThumbnails = document.querySelectorAll('#Slider-Thumbnails-template--17653238202535__main .thumbnail');
+                    allThumbnails.forEach(function(thumb) {
+                        thumb.removeAttribute('aria-current');
+                    });
+                    this.setAttribute('aria-current', 'true');
+                }
+            });
+        });
+        
+        // Chức năng: Scroll thumbnails khi click nút prev/next
+        const thumbnailList = document.querySelector('#Slider-Thumbnails-template--17653238202535__main');
+        const prevButton = document.querySelector('#GalleryThumbnails-template--17653238202535__main .slider-button--prev');
+        const nextButton = document.querySelector('#GalleryThumbnails-template--17653238202535__main .slider-button--next');
+        
+        if (thumbnailList && prevButton && nextButton) {
+            // Khoảng cách scroll mỗi lần click (bằng chiều cao/rộng của 1 thumbnail + gap) - Thực tế là chiều rộng vì flex-row
+            const scrollAmount = 124; // 96px width + 28px gap
+            
+            // Hàm cập nhật trạng thái disabled của nút
+            function updateButtonStates() {
+                const scrollPos = thumbnailList.scrollLeft;
+                const maxScroll = thumbnailList.scrollWidth - thumbnailList.clientWidth;
+                
+                // Disable prev khi ở đầu
+                if (Math.abs(scrollPos) <= 1) { // Dùng Math.abs và sai số nhỏ
+                    prevButton.setAttribute('disabled', 'disabled');
+                } else {
+                    prevButton.removeAttribute('disabled');
+                }
+                
+                // Disable next khi ở cuối
+                if (Math.abs(scrollPos) >= maxScroll - 5) { 
+                    nextButton.setAttribute('disabled', 'disabled');
+                } else {
+                    nextButton.removeAttribute('disabled');
+                }
+            }
+            
+            // Click nút prev - scroll lùi (left)
+            prevButton.addEventListener('click', function() {
+                thumbnailList.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+                setTimeout(updateButtonStates, 500);
+            });
+            
+            // Click nút next - scroll tới (right)
+            nextButton.addEventListener('click', function() {
+                thumbnailList.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+                setTimeout(updateButtonStates, 500);
+            });
+            
+            // Lắng nghe sự kiện scroll để cập nhật nút
+            thumbnailList.addEventListener('scroll', updateButtonStates);
+            
+            // Cập nhật trạng thái ban đầu
+            updateButtonStates();
+            
+            // Reset scroll position on load to fix "start at end" issue
+             window.addEventListener('load', function() {
+                thumbnailList.scrollLeft = 0;
+                updateButtonStates();
+            });
+        }
+    });
+    </script>
+    
+    </media-gallery>
       </div>
       <div class="product__info-wrapper grid__item Product_template_latest_rightside_new" bis_skin_checked="1">
         <section id="ProductInfo-template--17653238202535__main" class="product__info-container product__column-sticky Product_template_latest_rightside_loops_new"><div class="product-review-stats" bis_skin_checked="1">

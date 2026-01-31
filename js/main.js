@@ -308,21 +308,15 @@ function initVideoPopups() {
    =================================== */
 function initStaticReviewsSwiper() {
     var el = document.querySelector('.static-reviews-swiper');
-    if (!el || typeof Swiper === 'undefined') return;
-    var swiperInstance = new Swiper('.static-reviews-swiper', {
-        loop: true,
-        watchOverflow: false,
-        speed: 600,
-        slidesPerView: 'auto',
-        spaceBetween: 20,
-        allowTouchMove: true,
-        grabCursor: true
-    });
-    setInterval(function () {
-        if (swiperInstance && !swiperInstance.destroyed) {
-            swiperInstance.slideNext();
-        }
-    }, 4000);
+    if (!el) return;
+    var wrapper = el.querySelector('.swiper-wrapper');
+    if (!wrapper) return;
+    var slides = wrapper.querySelectorAll('.swiper-slide');
+    if (!slides.length) return;
+    for (var i = 0; i < slides.length; i++) {
+        wrapper.appendChild(slides[i].cloneNode(true));
+    }
+    el.classList.add('reviews-marquee');
 }
 
 /* ===================================

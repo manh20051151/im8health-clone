@@ -3739,12 +3739,24 @@ a.button.button_inverse_primary {
 .static-reviews-swiper .swiper-wrapper {
     align-items: stretch;
 }
+/* Chạy liên tục từ phải qua trái (marquee), không chuyển từng slide */
+.static-reviews-swiper.reviews-marquee .swiper-wrapper {
+    width: max-content;
+    animation: reviews-marquee 80s linear infinite;
+}
+@keyframes reviews-marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
 .static-reviews-swiper .swiper-slide {
     display: flex;
     flex-direction: column;
     height: auto;
     width: 400px;
     flex-shrink: 0;
+}
+.static-reviews-swiper.reviews-marquee .swiper-slide {
+    margin-right: 20px;
 }
 @media (max-width: 990px) {
     .static-reviews-swiper .swiper-slide {

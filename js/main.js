@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initProductTabs();
     initPillarsAccordion();
     initFaqAccordion();
+    initMetaAccordion();
     initStickyHeader();
     initScrollAnimations();
     initCountrySelector();
@@ -210,6 +211,32 @@ function initFaqAccordion() {
             // Toggle clicked FAQ
             if (!isActive) {
                 item.classList.add('active');
+            }
+        });
+    });
+}
+
+/* ===================================
+   Meta Accordion (Ingredients, Third-Party Tested, etc.)
+   =================================== */
+function initMetaAccordion() {
+    const metaAccordion = document.querySelector('.meta_accordions_detail_mainloops_new .accordion');
+    if (!metaAccordion) return;
+
+    const items = metaAccordion.querySelectorAll('ul > li');
+    items.forEach(li => {
+        const question = li.querySelector('.question');
+        if (!question) return;
+
+        question.addEventListener('click', () => {
+            const isOpen = li.classList.contains('open');
+            // Đóng tất cả các mục khác
+            items.forEach(item => {
+                item.classList.remove('open');
+            });
+            // Mở mục được click nếu trước đó đang đóng
+            if (!isOpen) {
+                li.classList.add('open');
             }
         });
     });

@@ -3054,6 +3054,9 @@ label.quarterly-variant-label2 {
     line-height: 135%;
     margin: 0;
 }
+.meta_accordions_detail_innerloops_new .accordion>ul>li.open .question h4 {
+    background: url(https://im8health.com/cdn/shop/t/121/assets/product_banner_minus.svg) no-repeat center right;
+}
 
 .meta_accordions_detail_innerloops_new .accordion>ul>li .answer {
     padding: 0 0 16px 0;
@@ -3062,6 +3065,10 @@ label.quarterly-variant-label2 {
     font-size: 16px;
     font-weight: 400;
     line-height: 135%;
+    display: none;
+}
+.meta_accordions_detail_innerloops_new .accordion>ul>li.open .answer {
+    display: block;
 }
 
 
@@ -3165,6 +3172,193 @@ ol {
     margin-bottom: var(--spacing-sm);
     list-style: decimal;
 }
+
+.meta_real_reviews_video_main_new {
+    margin: 24px 0 !important;
+}
+
+.meta_real_reviews_video_title_new {
+    color: #50000b;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -.4px;
+    font-family: var(--font-heading-family);
+}
+
+.meta_real_reviews_video_loops_new {
+    padding-top: 16px;
+}
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    display: block;
+}
+.swiper-horizontal {
+    touch-action: pan-y;
+}
+
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial);
+    box-sizing: content-box;
+}
+.swiper-android .swiper-slide, .swiper-ios .swiper-slide, .swiper-wrapper {
+    transform: translate3d(0px, 0, 0);
+}
+
+.swiper-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    display: block;
+}
+.swiper-backface-hidden .swiper-slide {
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.meta_real_reviews_video_loops_new .swiper-slide {
+    width: 104px;
+}
+.meta_real_reviews_video_loops_innerstatic_imagevideo_new {
+    height: 168px;
+    position: relative;
+}
+
+.people_popup_open {
+    cursor: pointer;
+}
+
+.meta_real_reviews_video_loops_innerstatic_imagevideo_new img {
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100% !important;
+    border-radius: 8px;
+}
+
+.meta_real_reviews_video_loops_innerstatic_imagevideo_new svg {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    z-index: 1;
+}
+
+/* people_popup_overlay_new */
+
+.people_popup_overlay_new {
+    position: fixed;
+    left: 0;
+    background: rgba(242, 224, 221, .5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    backdrop-filter: blur(8px);
+    z-index: 5;
+}
+
+.meta_real_reviews_mainpopup_new {
+    display: none;
+    position: fixed;
+    width: 450px;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    max-height: 664px;
+    z-index: 10;
+    padding: 20px;
+    transform: translate(-50%, -50%);
+}
+
+.meta_real_reviews_innerpopup_new {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    position: relative;
+}
+.meta_real_reviews_mainclose_new {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+    z-index: 1;
+}
+.meta_real_reviews_mainclose_new svg {
+    width: 48px;
+    height: auto;
+    display: flex;
+}
+
+.mute_video_popup_main_new {
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    width: 48px;
+    height: 48px;
+    z-index: 1;
+    cursor: pointer;
+    border-radius: 100%;
+}
+.mute_video_popup {
+    display: none;
+}
+
+.unmute_video_popup.active {
+    display: block;
+}
+.mute_video_popup_main_new svg {
+    height: auto;
+    width: 100%;
+    display: flex;
+}
+
+.meta_real_reviews_innerimage_new {
+    width: 100%;
+    height: 100%;
+}
+.video_play_icon_new {
+    cursor: pointer;
+}
+.meta_real_reviews_innerimage_new video {
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100% !important;
+    border-radius: 16px;
+}
+.meta_real_reviews_innerimage_new svg.play_icon {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
 
 /* ===================================
    Clinical Stats Section

@@ -3668,6 +3668,21 @@ a.button.button_inverse_primary {
 .button_inverse_primary:hover {
     background: #a40011;
 }
+.Index_tab_percent_studies_maininfos_new {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 40px 56px;
+}
+.Index_tab_percent_studies_maininfos_new p {
+    margin: 0;
+    color: #fff;
+    font-size: 12px;
+    line-height: 135%;
+}
+.Index_tab_percent_studies_innerinfos_new a {
+    color: #fff;
+}
 
 /* ===================================
    9 Organ Systems Section

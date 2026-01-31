@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initFaqAccordion();
     initMetaAccordion();
     initVideoPopups();
+    initStaticReviewsSwiper();
     initStickyHeader();
     initScrollAnimations();
     initCountrySelector();
@@ -300,6 +301,28 @@ function initVideoPopups() {
     if (overlay) {
         overlay.addEventListener('click', closePopups);
     }
+}
+
+/* ===================================
+   Static Reviews Swiper (10,000+ 5 Star - carousel chạy từ phải qua trái)
+   =================================== */
+function initStaticReviewsSwiper() {
+    var el = document.querySelector('.static-reviews-swiper');
+    if (!el || typeof Swiper === 'undefined') return;
+    var swiperInstance = new Swiper('.static-reviews-swiper', {
+        loop: true,
+        watchOverflow: false,
+        speed: 600,
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        allowTouchMove: true,
+        grabCursor: true
+    });
+    setInterval(function () {
+        if (swiperInstance && !swiperInstance.destroyed) {
+            swiperInstance.slideNext();
+        }
+    }, 4000);
 }
 
 /* ===================================

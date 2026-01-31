@@ -3722,23 +3722,37 @@ a.button.button_inverse_primary {
     color: #50000b;
     max-width: 600px;
 }
-.static-reviews-swiper.swiper-container {
+/* Slider full chiều ngang màn hình */
+.static-reviews-swiper.swiper-container,
+.static-reviews-swiper.swiper {
     width: 100vw;
+    max-width: none;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     margin-bottom: 40px;
-    overflow-x: clip;
-    overflow-y: visible;
+    overflow: hidden;
+    padding: 25px 20px;
+    box-sizing: border-box;
 }
 .static-reviews-swiper .swiper-wrapper {
     align-items: stretch;
-    transition-timing-function: linear !important;
 }
-
 .static-reviews-swiper .swiper-slide {
     display: flex;
     flex-direction: column;
     height: auto;
     width: 400px;
     flex-shrink: 0;
+}
+@media (max-width: 990px) {
+    .static-reviews-swiper .swiper-slide {
+        width: 340px;
+    }
+}
+@media (max-width: 600px) {
+    .static-reviews-swiper .swiper-slide {
+        width: 300px;
+    }
 }
 .swiper-backface-hidden .swiper-slide {
     transform: translateZ(0);

@@ -2927,10 +2927,20 @@ label.quarterly-variant-label2 {
 }
 .Buy_buttons_main_new {
     min-height: 48px;
+    display: block !important;
+    width: 100%;
 }
 
 .Buy_buttons_main_new .product-form {
     margin: 24px 0 12px 0 !important;
+    display: block !important;
+}
+
+.Buy_buttons_main_new form {
+    display: block !important;
+    width: 100% !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .product__info-container .product-form, .product__info-container .product__description, .product__info-container .icon-with-text {
@@ -2941,8 +2951,10 @@ label.quarterly-variant-label2 {
 }
 .Buy_buttons_main_new .product-form__buttons {
     max-width: 100% !important;
-    display: flex;
+    display: flex !important;
     grid-gap: 8px;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .product-form__submit {
@@ -2959,6 +2971,8 @@ label.quarterly-variant-label2 {
     min-height: 48px;
     padding: 5px;
     display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 .Buy_buttons_main_new .product-form__submit {
     display: flex !important;
@@ -2966,13 +2980,44 @@ label.quarterly-variant-label2 {
 .product-form__submit .button-text, .product-form__submit .dash_new, .product-form__submit .product_price_new {
     transition: none !important;
 }
-.Buy_buttons_main_new .product_price_new {
-    display: inline-block;
+.Buy_buttons_main_new .product-form__submit .button-text,
+.Buy_buttons_main_new .product-form__submit .dash_new, 
+.Buy_buttons_main_new .product-form__submit .product_price_new {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
+.product-form__submit.quarterly-selected, .button--primary {
+    background-color: #a40011 ;
+    color: #ffffff !important;
+    border-radius: 50px !important;
+    border: none !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+    width: 100%;
+    letter-spacing: .32px;
+}
+.product-form__submit.quarterly-selected:hover {
+    background: #50000b;
+}
 
+.button:hover {
+    background: #50000b;
+}
 
+.meta_accordions_detail_mainloops_new {
+    margin: 8px 0 24px 0 !important;
+}
 
+.accordion {
+    margin-top: 2.5rem;
+    margin-bottom: 0;
+    border-top: .1rem solid rgba(var(--color-foreground), .08);
+    border-bottom: .1rem solid rgba(var(--color-foreground), .08);
+}
 
 
 

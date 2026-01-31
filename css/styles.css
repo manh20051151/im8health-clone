@@ -239,6 +239,7 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: calc(var(--font-body-scale) * 62.5%);
+    overflow-x: hidden;
 }
 
 body {
@@ -248,6 +249,7 @@ body {
     font-family: "Aeonik", sans-serif;
     font-style: normal;
     font-weight: 400;
+    overflow-x: hidden;
 }
 
 a {

@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initPillarsAccordion();
     initFaqAccordion();
     initMetaAccordion();
+    initVideoPopups();
     initStickyHeader();
     initScrollAnimations();
     initCountrySelector();
@@ -240,6 +241,64 @@ function initMetaAccordion() {
             }
         });
     });
+}
+
+/* ===================================
+   Video Popups (Ambassadors)
+   =================================== */
+function initVideoPopups() {
+    const triggers = document.querySelectorAll('.people_popup_open');
+    const overlay = document.querySelector('.people_popup_overlay_new');
+    const popups = document.querySelectorAll('.meta_real_reviews_mainpopup_new');
+    const closeButtons = document.querySelectorAll('.meta_real_reviews_mainclose_new');
+
+    if (!triggers.length || !popups.length) return;
+
+    function openPopup(videoId) {
+        popups.forEach(function (popup) {
+            popup.classList.remove('people_popup_visible');
+        });
+        const targetPopup = document.querySelector('.meta_real_reviews_mainpopup_new.' + videoId + '_open');
+        if (targetPopup) {
+            targetPopup.classList.add('people_popup_visible');
+            if (overlay) overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            var video = targetPopup.querySelector('video');
+            if (video && video.getAttribute('video_url')) {
+                video.src = video.getAttribute('video_url');
+                video.play && video.play();
+            }
+        }
+    }
+
+    function closePopups() {
+        popups.forEach(function (popup) {
+            popup.classList.remove('people_popup_visible');
+            var video = popup.querySelector('video');
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+            }
+        });
+        if (overlay) overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    triggers.forEach(function (trigger) {
+        trigger.addEventListener('click', function (e) {
+            e.preventDefault();
+            var videoId = this.getAttribute('video_id');
+            if (videoId) openPopup(videoId);
+        });
+    });
+
+    closeButtons.forEach(function (btn) {
+        btn.addEventListener('click', closePopups);
+    });
+
+    if (overlay) {
+        overlay.addEventListener('click', closePopups);
+    }
 }
 
 /* ===================================

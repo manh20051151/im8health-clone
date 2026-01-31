@@ -3273,6 +3273,10 @@ ol {
     top: 0;
     backdrop-filter: blur(8px);
     z-index: 5;
+    display: none;
+}
+.people_popup_overlay_new.active {
+    display: block;
 }
 
 .meta_real_reviews_mainpopup_new {
@@ -3286,6 +3290,9 @@ ol {
     z-index: 10;
     padding: 20px;
     transform: translate(-50%, -50%);
+}
+.meta_real_reviews_mainpopup_new.people_popup_visible {
+    display: block;
 }
 
 .meta_real_reviews_innerpopup_new {
@@ -3369,81 +3376,7 @@ ol {
     background: var(--color-bg-secondary);
 }
 
-.stats-header {
-    text-align: center;
-    margin-bottom: var(--spacing-3xl);
-}
 
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-2xl);
-}
-
-.stat-card {
-    background: var(--color-bg-tertiary);
-    border-radius: var(--radius-xl);
-    padding: var(--spacing-xl);
-    text-align: center;
-    transition: transform var(--transition-base), box-shadow var(--transition-base);
-}
-
-.stat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.stat-number {
-    font-family: var(--font-heading);
-    font-size: var(--text-5xl);
-    font-weight: 700;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    display: block;
-    margin-bottom: var(--spacing-md);
-}
-
-.stat-description {
-    font-size: var(--text-sm);
-    color: var(--color-text-secondary);
-    line-height: 1.6;
-}
-
-.stats-footnote {
-    text-align: center;
-    font-size: var(--text-xs);
-    color: var(--color-text-muted);
-    font-style: italic;
-    margin-bottom: var(--spacing-2xl);
-}
-
-.trust-badges {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--spacing-lg);
-}
-
-.trust-badge {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    background: var(--color-bg-tertiary);
-    padding: var(--spacing-sm) var(--spacing-lg);
-    border-radius: var(--radius-full);
-}
-
-.badge-icon {
-    font-size: var(--text-xl);
-}
-
-.badge-text {
-    font-size: var(--text-sm);
-    font-weight: 500;
-}
 
 /* ===================================
    9 Organ Systems Section

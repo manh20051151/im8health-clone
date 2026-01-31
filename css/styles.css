@@ -3018,13 +3018,87 @@ label.quarterly-variant-label2 {
     border-top: .1rem solid rgba(var(--color-foreground), .08);
     border-bottom: .1rem solid rgba(var(--color-foreground), .08);
 }
+.meta_accordions_detail_innerloops_new .accordion {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+.list-unstyled {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.meta_accordions_detail_innerloops_new .accordion>ul {
+    margin: 0;
+    list-style-type: none;
+}
+.meta_accordions_detail_innerloops_new .accordion>ul>li {
+    margin: 0;
+    border-bottom: 1px solid #50000b;
+}
+.question {
+    cursor: pointer;
+    position: relative;
+}
+.meta_accordions_detail_innerloops_new .accordion>ul>li .question {
+    border: none;
+    padding: 16px 0;
+}
+
+.meta_accordions_detail_innerloops_new .accordion>ul>li .question h4 {
+    font-family: var(--font-body-family);
+    background: url(https://im8health.com/cdn/shop/t/121/assets/product_banner_plus.svg) no-repeat center right;
+    color: #50000b;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 135%;
+    margin: 0;
+}
+
+.meta_accordions_detail_innerloops_new .accordion>ul>li .answer {
+    padding: 0 0 16px 0;
+    position: relative;
+    color: #50000b;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 135%;
+}
 
 
+.meta_accordions_detail_innerloops_new .accordion>ul>li .answer p {
+    margin: 0 0 12px 0;
+}
 
+.meta_accordions_detail_innerloops_new .accordion>ul>li .answer p:last-child {
+    margin: 0;
+}
 
-
-
-
+.Meta_supplement_popup_main_acc_1_new {
+    margin-top: 12px;
+}
+.Meta_supplement_popup_innertitle_new {
+    color: #50000b;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 135%;
+    text-decoration-line: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
+}
+.meta_accordions_detail_innerloops_new .accordion>ul>li .answer ol, .meta_accordions_detail_innerloops_new .accordion>ul>li .answer ul {
+    padding: 0 0 0 26px;
+}
+::marker {
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+    text-indent: 0px !important;
+    text-align: start !important;
+    text-align-last: auto !important;
+}
+ol {
+    list-style-type: decimal;
+}
 
 
 

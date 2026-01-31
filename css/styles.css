@@ -4542,7 +4542,43 @@ a.button.button_inverse_primary {
     background: linear-gradient(135deg, var(--os-gold) 0%, var(--os-gold-dark) 100%);
     box-shadow: 0 4px 16px rgba(231, 141, 45, 0.3), 0 2px 4px rgba(231, 141, 45, 0.2);
 }
+.organ-systems--longevity .organ-systems__grid-plane--horizontal {
+    background-image: repeating-linear-gradient(0deg, transparent 0px, transparent 50px, rgba(180, 140, 30, 0.2) 50px, rgba(180, 140, 30, 0.2) 51px);
+}
+.organ-systems--longevity .organ-systems__grid-plane--vertical {
+    background-image: repeating-linear-gradient(90deg, transparent 0px, transparent 50px, rgba(180, 140, 30, 0.18) 50px, rgba(180, 140, 30, 0.18) 51px);
+}
+.organ-systems--longevity .organ-systems__grid-glow {
+    background: radial-gradient(ellipse 120% 80% at 20% 30%, rgba(231, 141, 45, 0.28) 0%, rgba(231, 141, 45, 0.12) 40%, transparent 70%), radial-gradient(ellipse 120% 80% at 80% 70%, rgba(231, 141, 45, 0.28) 0%, rgba(231, 141, 45, 0.12) 40%, transparent 70%), radial-gradient(ellipse 100% 100% at 50% 50%, rgba(231, 141, 45, 0.18) 0%, rgba(231, 141, 45, 0.09) 50%, transparent 80%);
+}
+.organ-systems--longevity .organ-systems__grid-overlay {
+    background: linear-gradient(180deg, rgba(250, 247, 238, 0.9) 0%, rgba(250, 247, 238, 0.6) 15%, rgba(250, 247, 238, 0.2) 35%, transparent 55%, rgba(248, 244, 232, 0.5) 75%, rgba(250, 247, 238, 0.9) 100%);
+}
+.organ-systems--longevity .organ-systems__glow-orb--red {
+    background: radial-gradient(circle, rgba(231, 141, 45, 0.55) 0%, rgba(231, 141, 45, 0.28) 30%, rgba(231, 141, 45, 0.1) 60%, transparent 80%);
+}
 
+.organ-systems--longevity .organ-systems__glow-orb--pink {
+    background: radial-gradient(circle, rgba(232, 163, 23, 0.5) 0%, rgba(232, 163, 23, 0.2) 30%, rgba(232, 163, 23, 0.05) 60%, transparent 80%);
+}
+.organ-systems--longevity {
+    --os-theme-primary: #E78D2D;
+    --os-theme-primary-light: #F5A855;
+    --os-theme-accent: #FFB366;
+    --os-theme-glow: rgba(231, 141, 45, 0.28);
+    --os-theme-glow-strong: rgba(231, 141, 45, 0.45);
+    --os-theme-grid-line: rgba(231, 141, 45, 0.25);
+    --os-theme-grid-line-subtle: rgba(180, 140, 30, 0.16);
+    --os-theme-bg-base: #FAF7EE;
+    --os-theme-bg-light: #FFFDF5;
+    --os-theme-bg-mid: #F8F4E8;
+    --os-theme-bg-tint: rgba(231, 141, 45, 0.08);
+    background: repeating-linear-gradient(0deg, transparent 0px, transparent 60px, rgba(180, 140, 30, 0.08) 60px, rgba(180, 140, 30, 0.08) 61px), repeating-linear-gradient(90deg, transparent 0px, transparent 60px, rgba(180, 140, 30, 0.06) 60px, rgba(180, 140, 30, 0.06) 61px), linear-gradient(180deg, #FAF7EE 0%, #FFFDF5 15%, #F8F4E8 40%, #FAF7EE 70%, rgba(231, 141, 45, 0.08) 100%);
+}
+
+section#organSystems {
+    padding: 0;
+}
 
 /* .cellular-health {
     padding: var(--spacing-4xl) 0;
@@ -6015,9 +6051,9 @@ button, input, select, textarea {
         .grid--2-col-tablet .grid__item {
         width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
     }
-        .organ-systems {
+        /* .organ-systems {
         padding: 120px 0 160px;
-    }
+    } */
     .organ-systems__toggle-wrapper {
         margin-bottom: 72px;
     }

@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initDetailsHover();
     initCounterAnimations();
     initOrganSystemsCards();
+    initOrganSystemsToggle();
 });
 
 /* ===================================
@@ -644,6 +645,66 @@ function initCounterAnimations() {
 
     counters.forEach(counter => {
         observer.observe(counter);
+    });
+}
+
+/* ===================================
+   Organ Systems Toggle: chuyển đổi giữa Essentials và Longevity
+   =================================== */
+function initOrganSystemsToggle() {
+    const toggleButtons = document.querySelectorAll('.organ-systems__toggle-btn');
+
+    if (!toggleButtons.length) return;
+
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const productType = this.getAttribute('data-product');
+            if (!productType) return;
+
+            const toggleContainer = this.closest('.organ-systems__toggle');
+            if (!toggleContainer) return;
+
+            // Cập nhật trạng thái active cho các nút
+            toggleButtons.forEach(btn => {
+                btn.classList.remove('organ-systems__toggle-btn--active');
+                btn.setAttribute('aria-selected', 'false');
+                btn.setAttribute('tabindex', '-1');
+            });
+
+            this.classList.add('organ-systems__toggle-btn--active');
+            this.setAttribute('aria-selected', 'true');
+            this.setAttribute('tabindex', '0');
+
+            // Cập nhật data-active của toggle container
+            toggleContainer.setAttribute('data-active', productType);
+
+            // Tìm section cha
+            const section = this.closest('.organ-systems');
+            if (!section) return;
+
+            // Cập nhật data-active-product của section
+            section.setAttribute('data-active-product', productType);
+
+            // Thêm hoặc xóa class organ-systems--longevity
+            if (productType === 'longevity') {
+                section.classList.add('organ-systems--longevity');
+            } else {
+                section.classList.remove('organ-systems--longevity');
+            }
+
+            // Ẩn tất cả content, chỉ hiện content tương ứng
+            const allContents = section.querySelectorAll('.organ-systems__content');
+            allContents.forEach(content => {
+                const contentType = content.getAttribute('data-content');
+                if (contentType === productType) {
+                    content.classList.add('organ-systems__content--active');
+                    content.removeAttribute('hidden');
+                } else {
+                    content.classList.remove('organ-systems__content--active');
+                    content.setAttribute('hidden', '');
+                }
+            });
+        });
     });
 }
 

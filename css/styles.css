@@ -239,7 +239,7 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: calc(var(--font-body-scale) * 62.5%);
-    overflow-x: hidden;
+    overflow-x: clip; /* clip không phá position: sticky (hidden sẽ phá) */
 }
 
 body {
@@ -249,7 +249,7 @@ body {
     font-family: "Aeonik", sans-serif;
     font-style: normal;
     font-weight: 400;
-    overflow-x: hidden;
+    overflow-x: clip; /* clip không phá position: sticky (hidden sẽ phá) */
 }
 
 a {
@@ -5236,10 +5236,14 @@ button, input, select, textarea {
         flex-direction: column-reverse !important;
     }
     
-    /* Ensure the custom class controls the column width explicitly in this range */
+    /* Left column sticky: cố định khi scroll cho đến khi hết nội dung cột phải */
     .Product_template_latest_leftside_new {
         width: calc(55% - var(--grid-desktop-horizontal-spacing) / 2) !important;
         max-width: 55% !important;
+        align-self: start;
+        position: sticky;
+        top: 11rem;
+        z-index: 2;
     }
 
     .template-product .slider-mobile-gutter_large {
@@ -5421,6 +5425,10 @@ button, input, select, textarea {
         .Product_template_latest_leftside_new {
         max-width: 48% !important;
         width: 48% !important;
+        align-self: start;
+        position: sticky;
+        top: 11rem;
+        z-index: 2;
     }
         .template-product .slider-mobile-gutter_large {
         margin-left: 70px !important;

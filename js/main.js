@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initAdvisorListPopup();
     initShopNowBar();
     initStickyBuyDropdown();
+    initImageLightbox();
 });
 
 /* ===================================
@@ -1300,3 +1301,88 @@ function initStickyBuyDropdown() {
         }
     });
 }
+
+/* ===================================
+   Image Lightbox Popup
+   =================================== */
+function initImageLightbox() {
+    // Tạo modal HTML nếu chưa tồn tại
+    if (!document.getElementById('image-lightbox')) {
+        const lightboxHTML = `
+            <div id="image-lightbox" class="image-lightbox">
+                <div class="image-lightbox__overlay"></div>
+                <div class="image-lightbox__content">
+                    <button id="ModalClose-template--17653238202535__main" type="button" class="product-media-modal__toggle" aria-label="Close" style="position: absolute !important; top: -24px !important; right: 16px !important; z-index: 999 !important;">
+          <svg class="icon icon-close" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g clip-path="url(#clip0_2571_42707)">
+            <g filter="url(#filter0_b_2571_42707)">
+            <path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"></path>
+            <path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#50000B"></path>
+            </g>
+            <path d="M30.3633 30.3639L17.6354 17.636" stroke="#50000B" stroke-width="2" stroke-linecap="square"></path>
+            <path d="M30.3633 17.636L17.6354 30.3639" stroke="#50000B" stroke-width="2" stroke-linecap="square"></path>
+            </g>
+            <defs>
+            <filter id="filter0_b_2571_42707" x="-12" y="-12" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+            <feGaussianBlur in="BackgroundImageFix" stdDeviation="6"></feGaussianBlur>
+            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_2571_42707"></feComposite>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_2571_42707" result="shape"></feBlend>
+            </filter>
+            <clipPath id="clip0_2571_42707">
+            <rect width="48" height="48" fill="white"></rect>
+            </clipPath>
+            </defs>
+          </svg>
+        </button>
+                    <img class="image-lightbox__image" src="" alt="Product image">
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', lightboxHTML);
+    }
+
+    const lightbox = document.getElementById('image-lightbox');
+    const lightboxImage = lightbox.querySelector('.image-lightbox__image');
+    const closeBtn = lightbox.querySelector('.product-media-modal__toggle');
+    const overlay = lightbox.querySelector('.image-lightbox__overlay');
+
+    // Mở lightbox khi click vào modal-opener
+    document.querySelectorAll('.product__modal-opener').forEach(opener => {
+        opener.style.cursor = 'zoom-in';
+        opener.addEventListener('click', function (e) {
+            e.preventDefault();
+            const img = this.querySelector('img');
+            if (img) {
+                // Lấy ảnh resolution cao nhất từ srcset hoặc src
+                let highResSrc = img.src;
+                if (img.srcset) {
+                    const srcset = img.srcset.split(',');
+                    const lastSrc = srcset[srcset.length - 1].trim().split(' ')[0];
+                    if (lastSrc) highResSrc = lastSrc;
+                }
+                lightboxImage.src = highResSrc;
+                lightboxImage.alt = img.alt || 'Product image';
+                lightbox.classList.add('image-lightbox--active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+
+    // Đóng lightbox
+    function closeLightbox() {
+        lightbox.classList.remove('image-lightbox--active');
+        document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', closeLightbox);
+    overlay.addEventListener('click', closeLightbox);
+
+    // Đóng bằng phím ESC
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('image-lightbox--active')) {
+            closeLightbox();
+        }
+    });
+}
+

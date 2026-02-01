@@ -11258,3 +11258,95 @@ body:has(
 div#MegaMenu-Content-1 {
   background: transparent !important;
 }
+
+/* ===================================
+   Image Lightbox Popup
+   =================================== */
+.image-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.image-lightbox--active {
+  opacity: 1;
+  visibility: visible;
+      background: rgba(242, 224, 221, .5) !important;
+    backdrop-filter: blur(8px) !important;
+}
+
+.image-lightbox__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+}
+
+.image-lightbox__content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 1;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.image-lightbox--active .image-lightbox__content {
+  transform: scale(1);
+}
+
+.image-lightbox__image {
+    max-width: 640px;
+    max-height: 640px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.image-lightbox__close {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.image-lightbox__close:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 750px) {
+  .image-lightbox__content {
+    max-width: 95vw;
+  }
+  
+  .image-lightbox__close {
+    top: -50px;
+    right: 5px;
+    width: 36px;
+    height: 36px;
+  }
+}
+

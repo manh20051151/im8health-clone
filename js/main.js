@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initComparisonTableToggle();
     initPillarsHealthNav();
     initPillarsHealthToggle();
+    initExpertsSlider();
 });
 
 /* ===================================
@@ -1064,3 +1065,55 @@ function initPillarsHealthToggle() {
     }
 
 })();
+
+/* ===================================
+   Experts Slider: Auto-scroll từ phải qua trái
+   =================================== */
+function initExpertsSlider() {
+    // Kiểm tra xem Swiper đã được load chưa
+    if (typeof Swiper === 'undefined') {
+        console.warn('[Experts Slider] Swiper library not found');
+        return;
+    }
+
+    const expertsSlider = document.querySelector('.Index_object_experts_list_slider');
+
+    if (!expertsSlider) return;
+
+    // Khởi tạo Swiper với autoplay chạy liên tục (marquee effect)
+    new Swiper(expertsSlider, {
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        loop: true,
+        speed: 4000, // Tốc độ di chuyển (càng cao càng chậm)
+        allowTouchMove: true, // Cho phép người dùng vuốt
+        freeMode: true, // Chế độ tự do
+        autoplay: {
+            delay: 0, // Chạy liên tục không dừng
+            disableOnInteraction: false, // Tiếp tục chạy sau khi tương tác
+            pauseOnMouseEnter: false, // Không dừng khi hover (tùy chọn)
+        },
+        watchSlidesProgress: true,
+        // Responsive breakpoints
+        breakpoints: {
+            320: {
+                slidesPerView: 1.2,
+                spaceBetween: 16
+            },
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 16
+            },
+            990: {
+                slidesPerView: 'auto',
+                spaceBetween: 16
+            }
+        },
+        on: {
+            init: function () {
+                // Thêm transition-timing-function: linear để chạy đều
+                this.wrapperEl.style.transitionTimingFunction = 'linear';
+            }
+        }
+    });
+}

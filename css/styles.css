@@ -6274,6 +6274,9 @@ div#homepage_comparison-chart_viewmore:hover {
     padding: 0 56px;
 }
 
+.Index_object_experts_list_slider .swiper-wrapper {
+    transition-timing-function: linear !important;
+}
 
 .Index_object_experts_list_inneroverlay_innerloop_mainboxs_new {
     width: 400px !important;
@@ -6488,6 +6491,42 @@ img {
 .expert-link:hover {
     color: var(--color-primary-light);
 } */
+
+/* ===================================
+   Divider Section
+   =================================== */
+.product-breakdown-banner-section {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+.product-breakdown-banner-section .hidden {
+    display: none !important;
+}
+
+.desktop_banner {
+    display: block;
+}
+img[loading=lazy] {
+    decoding: async;
+}
+
+.product-breakdown-banner-section img {
+    width: 100%;
+}
+
+.product-breakdown-banner-section img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.product-breakdown-banner-section .desktop_banner {
+    display: block;
+}
+.product-breakdown-banner-section .mobile_banner {
+    display: none;
+}
 
 /* ===================================
    FAQs Section

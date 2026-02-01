@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initRealResultsSlider();
     initAdvisorListPopup();
     initShopNowBar();
+    initStickyBuyDropdown();
 });
 
 /* ===================================
@@ -1238,4 +1239,64 @@ function initShopNowBar() {
 
     window.addEventListener('scroll', handleScroll);
     handleScroll();
+}
+
+/* ===================================
+   Sticky Buy Dropdown
+   =================================== */
+function initStickyBuyDropdown() {
+    const dropdown = document.getElementById('sticky-buy-dropdown');
+    if (!dropdown) return;
+
+    const selected = document.getElementById('sticky-buy-selected');
+    const options = document.getElementById('sticky-buy-options');
+    const optionItems = dropdown.querySelectorAll('.dropdown-option');
+
+    if (!selected || !options) return;
+
+    // Toggle dropdown
+    selected.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isHidden = options.style.display === 'none' || options.style.display === '';
+
+        if (isHidden) {
+            options.style.display = 'block';
+            selected.classList.add('open');
+            // Find the arrow and rotate it
+            const arrow = selected.querySelector('.dropdown-arrow');
+            if (arrow) arrow.style.transform = 'rotate(180deg)';
+        } else {
+            options.style.display = 'none';
+            selected.classList.remove('open');
+            const arrow = selected.querySelector('.dropdown-arrow');
+            if (arrow) arrow.style.transform = 'rotate(0deg)';
+        }
+    });
+
+    // Handle option selection
+    optionItems.forEach(item => {
+        item.addEventListener('click', function (e) {
+            e.stopPropagation();
+            const title = this.getAttribute('data-alt-name') || this.textContent.trim();
+
+            const titleEl = selected.querySelector('.dropdown-selected__title');
+            if (titleEl) titleEl.textContent = title;
+
+            // Close dropdown
+            options.style.display = 'none';
+            selected.classList.remove('open');
+            const arrow = selected.querySelector('.dropdown-arrow');
+            if (arrow) arrow.style.transform = 'rotate(0deg)';
+        });
+    });
+
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) {
+            options.style.display = 'none';
+            selected.classList.remove('open');
+            const arrow = selected.querySelector('.dropdown-arrow');
+            if (arrow) arrow.style.transform = 'rotate(0deg)';
+        }
+    });
 }

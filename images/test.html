@@ -1,1 +1,309 @@
-.card-wrapper:hover .media.media--hover-effect>img:first-child:not(:only-child){opacity:0}
+<div class="product-buy-sticky-container initialized" bis_skin_checked="1">
+  <div class="page-width product-buy-sticky__inner" bis_skin_checked="1">
+    <div class="product-details" bis_skin_checked="1">
+      <div class="product-image-container" bis_skin_checked="1">
+        <img
+          src="https://im8health.com/cdn/shop/files/PDP_07c659fc-2e80-4d58-a136-6d06961f00aa.jpg?v=1766566325&amp;width=500"
+          alt="Daily Ultimate Essentials: All-in-One Supplement"
+          srcset="
+            https://im8health.com/cdn/shop/files/PDP_07c659fc-2e80-4d58-a136-6d06961f00aa.jpg?v=1766566325&amp;width=500
+          "
+          width="500"
+          height="500"
+          class="product-image"
+          id="sticky-product-image"
+          style="opacity: 1"
+        />
+        <div class="image-glow" bis_skin_checked="1"></div>
+      </div>
+      <div
+        class="product-title"
+        data-title="Daily Ultimate Essentials: All-in-One Supplement"
+        bis_skin_checked="1"
+      >
+        Daily Ultimate Essentials: All-in-One Supplement
+
+        <div
+          class="product-title__variant"
+          data-title="Daily Ultimate Essentials: All-in-One Supplement"
+          bis_skin_checked="1"
+        >
+          (Single-Serve Sachets)
+        </div>
+      </div>
+    </div>
+
+    <div class="right-aligned" bis_skin_checked="1">
+      <div
+        class="custom-dropdown"
+        id="sticky-buy-dropdown"
+        bis_skin_checked="1"
+      >
+        <div
+          class="dropdown-selected"
+          id="sticky-buy-selected"
+          bis_skin_checked="1"
+        >
+          <div class="dropdown-selected__title" bis_skin_checked="1">
+            90-Day Supply (Save 22%)
+          </div>
+          <div
+            class="dropdown-selected__price-per-serving"
+            bis_skin_checked="1"
+          >
+            39.70 SEK / serving
+          </div>
+          <span class="dropdown-arrow"></span>
+        </div>
+
+        <ul class="dropdown-options dropdown-up" id="sticky-buy-options">
+          <li
+            class="dropdown-option dropdown-option--quarterly"
+            data-option-value-id="5658043252903"
+            data-variant-id="47315076022439"
+            data-title="Quarterly Subscription"
+            data-alt-name="90-Day Supply"
+            data-quarterly="true"
+          >
+            90-Day Supply
+          </li>
+          <li
+            class="dropdown-option dropdown-option--double-sub"
+            data-option-value-id="5316462870695"
+            data-variant-id="46954316955815"
+            data-title="Double Subscription"
+            data-alt-name="60-Day Supply"
+            data-double-subscription="true"
+          >
+            60-Day Supply
+          </li>
+          <li
+            class="dropdown-option"
+            data-option-value-id="4599807738023"
+            data-variant-id="46073779257511"
+            data-title="Subscription"
+            data-alt-name="30-Day Supply"
+          >
+            30-Day Supply
+          </li>
+        </ul>
+      </div>
+
+      <style>
+        /* US/UK: Hide double subscription variants in dropdown */
+        .dropdown-option[data-double-subscription="true"],
+        .dropdown-option--double-sub {
+          display: none !important;
+        }
+
+        /* ==========================================================================
+     HIGHLIGHT 30-DAY MODE - Reorder dropdown options
+     ========================================================================== */
+        .highlight-30day-mode .dropdown-options {
+          display: none; /* Keep default hidden */
+        }
+
+        .highlight-30day-mode .dropdown-options.dropdown-reordered {
+          display: flex;
+          flex-direction: column;
+        }
+
+        /* Regular subscription (30-day) first */
+        .highlight-30day-mode
+          .dropdown-option:not(.dropdown-option--quarterly):not(
+            .dropdown-option--double-sub
+          ) {
+          order: -1;
+        }
+
+        /* Premium variants second */
+        .highlight-30day-mode .dropdown-option--quarterly,
+        .highlight-30day-mode .dropdown-option--double-sub {
+          order: 0;
+        }
+
+        /* Format-aware hiding: Hide variant 46954316923047 (Format: Single-Serve Sachets) only when that Format is selected */
+        product-info:has(
+            input[type="radio"][name*="Format"][value="Single-Serve Sachets"]:checked
+          )
+          ~ .product__info-wrapper
+          #sticky-buy-options
+          .dropdown-option[data-variant-id="46954316923047"] {
+          display: none !important;
+        }
+
+        body:has(
+            product-info
+              input[type="radio"][name*="Format"][value="Single-Serve Sachets"]:checked
+          )
+          #sticky-buy-options
+          .dropdown-option[data-variant-id="46954316923047"] {
+          display: none !important;
+        }
+
+        /* Format-aware hiding: Hide variant 46954316955815 (Format: Forever Jar) only when that Format is selected */
+        product-info:has(
+            input[type="radio"][name*="Format"][value="Forever Jar"]:checked
+          )
+          ~ .product__info-wrapper
+          #sticky-buy-options
+          .dropdown-option[data-variant-id="46954316955815"] {
+          display: none !important;
+        }
+
+        body:has(
+            product-info
+              input[type="radio"][name*="Format"][value="Forever Jar"]:checked
+          )
+          #sticky-buy-options
+          .dropdown-option[data-variant-id="46954316955815"] {
+          display: none !important;
+        }
+
+        .custom-dropdown {
+          position: relative;
+          width: 280px;
+          text-align: left;
+          /* CSS containment for better performance - no paint containment to allow dropdown overflow */
+          contain: none;
+          overflow: visible;
+        }
+
+        .dropdown-selected {
+          border: 1px solid #50000b;
+          padding: 8px 30px;
+          border-radius: 20px;
+          cursor: pointer;
+          background-color: #f9f4f4;
+          color: #50000b;
+          font-weight: bold;
+          /* Prevent layout shift from font loading */
+          min-height: 42px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .dropdown-options {
+          display: none;
+          position: absolute;
+          background-color: #fff;
+          border: 1px solid #50000b;
+          border-radius: 20px;
+          list-style: none;
+          margin: 5px 0 0;
+          padding: 0;
+          z-index: 1000;
+          overflow: hidden;
+          width: 100%;
+          /* Ensure dropdown is never clipped */
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .dropdown-up {
+          bottom: 100%;
+          margin-bottom: 5px;
+          margin-top: 0;
+        }
+
+        .dropdown-down {
+          top: 100%;
+        }
+
+        .dropdown-option {
+          padding: 10px 20px;
+          cursor: pointer;
+          color: #50000b;
+          font-weight: bold;
+          border-bottom: 1px solid #f2f2f2;
+        }
+
+        .dropdown-option:hover {
+          background-color: #f9f4f4;
+        }
+
+        .dropdown-option:last-child {
+          border-bottom: none;
+        }
+
+        .dropdown-arrow {
+          position: absolute;
+          right: 20px;
+          top: 18px;
+          width: 0;
+          height: 0;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 6px solid #50000b;
+          transition: transform 0.3s ease;
+          /* Optimize animation performance */
+          will-change: transform;
+        }
+
+        .dropdown-selected.open .dropdown-arrow {
+          transform: rotate(180deg);
+        }
+
+        .dropdown-selected__title {
+          /* Font rendering optimization */
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          text-rendering: optimizeLegibility;
+          /* Pre-allocate space to prevent shift */
+          min-height: 1.3em;
+        }
+
+        @media screen and (max-width: 768px) {
+          .custom-dropdown {
+            width: 250px;
+          }
+        }
+      </style>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const dropdownSelected = document.getElementById(
+            "sticky-buy-selected",
+          );
+          const dropdownOptions = document.getElementById("sticky-buy-options");
+          const selectedTitle = dropdownSelected.querySelector(
+            ".dropdown-selected__title",
+          );
+
+          // Ensure the selected option is not a hidden variant (format-aware check)
+          const ensureVisibleSelection = () => {
+            const currentTitle = selectedTitle.textContent.trim();
+            const currentOption = dropdownOptions.querySelector(
+              `.dropdown-option[data-title="${currentTitle}"]`,
+            );
+
+            console.log("[Hidden Variants Dropdown] Format-aware check:", {
+              title: currentTitle,
+              option: currentOption,
+              display: currentOption
+                ? window.getComputedStyle(currentOption).display
+                : "N/A",
+              allOptions: Array.from(
+                dropdownOptions.querySelectorAll(".dropdown-option"),
+              ).map((opt) => ({
+                title: opt.dataset.title,
+                variantId: opt.dataset.variantId,
+                display: window.getComputedStyle(opt).display,
+              })),
+            });
+
+            
+          };
+        });
+      </script>
+
+      <button class="product-buy-sticky__button" data-preorder="false">
+        <span class="text-desktop"
+          >Add to cart
+          <span class="button-text-price"> - 1191 SEK/mo</span></span
+        >
+        <span class="text-mobile">Add</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -8311,60 +8311,369 @@ call-to-action-purchase#productpage_welcomekit_addtocart:hover {
     line-height: 1.8;
 } */
 
-/* ===================================
-   HSA/FSA Section
-   =================================== */
 
-.hsa-fsa {
-    padding: var(--spacing-4xl) 0;
-    background: var(--gradient-dark);
-}
-
-.hsa-steps {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: var(--spacing-lg);
-}
-
-.step-card {
-    background: var(--color-bg-tertiary);
-    border-radius: var(--radius-xl);
-    padding: var(--spacing-xl);
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.step-number {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    background: var(--gradient-primary);
-    color: white;
-    font-size: var(--text-xl);
-    font-weight: 700;
-    border-radius: var(--radius-full);
-    margin-bottom: var(--spacing-md);
-}
-
-.step-card h4 {
-    font-size: var(--text-lg);
-    font-weight: 600;
-    margin-bottom: var(--spacing-sm);
-}
-
-.step-card p {
-    font-size: var(--text-sm);
-    color: var(--color-text-secondary);
-    line-height: 1.6;
-}
 
 /* ===================================
    Footer
    =================================== */
 
+.color-scheme-2 {
+    --color-background: 80, 0, 11;
+    --gradient-background: #50000b;
+    --color-foreground: 255, 150, 147;
+    --color-background-contrast: 255, 80, 104;
+    --color-shadow: 255, 150, 147;
+    --color-button: 255, 150, 147;
+    --color-button-text: 80, 0, 11;
+    --color-secondary-button: 80, 0, 11;
+    --color-secondary-button-text: 255, 150, 147;
+    --color-link: 255, 150, 147;
+    --color-badge-foreground: 255, 150, 147;
+    --color-badge-background: 80, 0, 11;
+    --color-badge-border: 255, 150, 147;
+    --payment-terms-background-color: rgb(80 0 11);
+}
+
+.Footer_main_new {
+    padding: 72px 0 34px 0 !important;
+}
 .footer {
+    z-index: 1;
+    position: relative;
+}
+.footer {
+    border-top: .1rem solid rgba(var(--color-foreground), .08);
+}
+.footer {
+    margin-top: 0px;
+}
+.section-sections--17653237252263__footer-padding {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.footer:not(.color-scheme-1) {
+    border-top: none;
+}
+.footer__content-top {
+    padding-bottom: 5rem;
+    display: block;
+}
+.Footer_main_new .footer__content-top {
+    display: flex !important;
+    align-items: flex-start;
+    padding-bottom: 86px;
+}
+
+.Footer_1_loops_new {
+    width: calc(100% - 27.862%);
+    grid-gap: 20px !important;
+}
+.Footer_1_loops_boxs_new {
+    width: calc(20% - 16px) !important;
+}
+.grid--2-col .grid__item {
+    width: calc(50% - var(--grid-mobile-horizontal-spacing) / 2);
+}
+.footer-block__heading {
+    font-family: var(--font-heading-family);
+    color: #ff9693 !important;
+    font-size: 16px !important;
+    font-weight: 700;
+    line-height: 135%;
+    margin: 0 !important;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.footer-block__heading {
+    margin-bottom: 2rem;
+    margin-top: 0;
+    font-size: calc(var(--font-heading-scale) * 1.6rem);
+}
+.footer-block__details-content {
+    margin-bottom: 4rem;
+}
+
+.footer-menu-name-Shop li:nth-child(1) {
+    order: 1;
+}
+
+.customer a, .link {
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    box-shadow: none;
+    text-decoration: underline;
+    text-underline-offset: .3rem;
+    color: rgb(var(--color-link));
+    background-color: transparent;
+    font-size: 1.4rem;
+    font-family: inherit;
+}
+
+.list-menu__item--link {
+    text-decoration: none;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    line-height: calc(1 + 0.8 / var(--font-body-scale));
+}
+.footer-block__details-content ul li a {
+    color: #ff9693 !important;
+    font-size: 14px !important;
+    font-weight: 400;
+    line-height: 135%;
+    padding: 8px 0 !important;
+    display: block;
+    text-decoration: none !important;
+}
+
+.footer-block__details-content .list-menu__item--link, .copyright__content a {
+    color: rgba(var(--color-foreground), .75);
+}
+.Footer_1_newsletter_main_new {
+    width: 27.862%;
+    padding-left: 45px;
+    border-left: 1px solid rgba(255, 150, 147, .3);
+}
+.footer-block--newsletter {
+    margin-top: 0 !important;
+}
+.footer-block--newsletter {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 3rem;
+    gap: 1rem;
+}
+
+.Footer_1_newsletter_mainboth_new {
+    display: none;
+}
+.footer-block__newsletter {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.Footer_1_newsletter_title_new h4 {
+    margin: 0;
+    color: #ff9693;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 135%;
+    text-transform: uppercase;
+    font-family: var(--font-body-family);
+}
+.footer__newsletter {
+    padding-top: 20px;
+    max-width: 100% !important;
+}
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+.newsletter-form__field-wrapper {
+    max-width: 36rem;
+}
+.newsletter-form__field-wrapper {
+    width: 100%;
+}
+.Footer_1_newsletter_main_new .newsletter-form__field-wrapper {
+    max-width: 100%;
+}
+.newsletter-form__field-wrapper .field {
+    z-index: 0;
+}
+.Footer_1_newsletter_main_new .newsletter-form__field-wrapper .field {
+    display: block;
+}
+
+.customer .field input, .customer select, .field__input, .select__select {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+    font-family: var(--font-body-family);
+    font-style: var(--font-body-style);
+    font-weight: var(--font-body-weight);
+    font-size: 1.6rem;
+    width: 100%;
+    box-sizing: border-box;
+    transition: box-shadow var(--duration-short) ease;
+    border-radius: var(--inputs-radius);
+    height: 4.5rem;
+    min-height: calc(var(--inputs-border-width) * 2);
+    min-width: calc(7rem + (var(--inputs-border-width) * 2));
+    position: relative;
+    border: 0;
+}
+.customer .field input, .field__input {
+    flex-grow: 1;
+    text-align: left;
+    padding: 1.5rem;
+    margin: var(--inputs-border-width);
+    transition: box-shadow var(--duration-short) ease;
+}
+
+
+
+.newsletter-form__field-wrapper .field__input {
+    padding-right: 5rem;
+}
+.Footer_1_newsletter_main_new .newsletter-form__field-wrapper .field__input {
+    color: transparent;
+    text-shadow: 0 0 0 #50000b;
+    border-radius: 80px;
+    border: 1px solid #50000b;
+    background: #fff url(https://im8health.com/cdn/shop/t/121/assets/cursor_blinking.gif) no-repeat left 7px center;
+    font-family: var(--font-nb-architekt) !important;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 135%;
+    letter-spacing: .28px;
+    padding: 0 15px 0 30px;
+    min-height: 48px;
+    background-size: auto 32px;
+}
+
+
+.customer .field label, .field__label {
+    font-size: 1.6rem;
+    left: calc(var(--inputs-border-width) + 2rem);
+    top: calc(1rem + var(--inputs-border-width));
+    margin-bottom: 0;
+    pointer-events: none;
+    position: absolute;
+    transition: top var(--duration-short) ease, font-size var(--duration-short) ease;
+    color: rgba(var(--color-foreground), .75);
+    letter-spacing: 0;
+    line-height: 1.5;
+}
+.Footer_1_newsletter_main_new .newsletter-form__field-wrapper .field__label {
+    display: none;
+}
+.newsletter-form__button {
+    width: 4.4rem;
+    margin: 0;
+    right: var(--inputs-border-width);
+    top: 0;
+    height: 100%;
+    z-index: 2;
+}
+
+.Footer_1_newsletter_main_new .newsletter-form__button {
+    width: 100% !important;
+    display: block;
+    position: relative;
+    border-radius: 100px;
+    background: #a40011 !important;
+    padding: 13px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: .32px;
+    text-transform: uppercase;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.newsletter-form__button:not(:focus-visible):not(.focused) {
+    box-shadow: inherit;
+    background-color: inherit;
+}
+.Footer_1_newsletter_texts_new p {
+    margin: 0;
+    padding-top: 20px;
+    color: #ff9693;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 135%;
+    max-width: 280px;
+    text-align: left;
+}
+.Footer_2_sides_innerlogos_new img {
+    width: 100%;
+    display: flex;
+    height: auto;
+}
+
+.Footer_2_sides_innerbottom_new {
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.Footer_2_sides_innerbottom_copyright_new {
+    color: rgba(255, 255, 255, .5);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 135%;
+}
+
+.Footer_2_sides_innerbottom_menulists_new ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.Footer_2_sides_innerbottom_menulists_new ul li {
+    list-style: none;
+    margin-left: 15px;
+    position: relative;
+    display: flex;
+}
+.Footer_2_sides_innerbottom_menulists_new ul li a {
+    color: rgba(255, 255, 255, .5);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 135%;
+    text-decoration: none;
+}
+.Footer_2_sides_innerbottom_menulists_new ul li:after {
+    position: absolute;
+    content: '';
+    width: 3px;
+    height: 3px;
+    border-radius: 100%;
+    background: rgba(255, 255, 255, .5);
+    top: 6px;
+    left: -9px;
+}
+.Footer_2_sides_banner_claim_container {
+    margin: 50px;
+    color: #ff9693;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Footer_2_sides_banner_claim_content {
+    padding: 15px;
+    width: 80%;
+    text-align: center;
+    border: 1px solid;
+    font-weight: 600;
+}
+
+.Footer_2_sides_banner_claim_content_2 {
+    font-size: .8em;
+    margin-top: 10px;
+    text-align: center;
+    width: 80%;
+}
+
+
+.Footer_2_sides_banner_claim_content_1{
+    margin: 15px 0px;
+}
+
+
+
+
+/* .footer {
     padding: var(--spacing-4xl) 0 var(--spacing-xl);
     background: var(--color-bg-primary);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -8469,7 +8778,7 @@ call-to-action-purchase#productpage_welcomekit_addtocart:hover {
     border-radius: var(--radius-md);
     font-size: var(--text-sm);
     cursor: pointer;
-}
+} */
 
 /* ===================================
    Responsive Design
@@ -9362,6 +9671,61 @@ button, input, select, textarea {
         .h5, h5 {
         font-size: calc(var(--font-heading-scale) * 1.3rem);
     }
+        .footer {
+        margin-top: 0px;
+    }
+        .section-sections--17653237252263__footer-padding {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+        .footer__content-top .grid {
+        row-gap: 6rem;
+        margin-bottom: 0;
+    }
+        .footer-block {
+        display: block;
+        margin-top: 0;
+    }
+        .grid--2-col .grid__item {
+        width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
+    }
+        .grid--4-col-tablet .grid__item {
+        width: calc(25% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
+    }
+        .grid--3-col-tablet .grid__item {
+        width: calc(33.33% - var(--grid-desktop-horizontal-spacing) * 2 / 3);
+    }
+        .footer-block__details-content {
+        margin-bottom: 0;
+    }
+        .list-menu__item--link {
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
+    }
+    .footer-block__details-content .list-menu__item--link {
+        display: inline-block;
+        font-size: 1.4rem;
+    }
+        .footer-block__details-content>:first-child .list-menu__item--link {
+        padding-top: 0;
+    }
+        .footer-block--newsletter {
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+        .footer-block__newsletter:not(:only-child) {
+        text-align: left;
+        margin-right: auto;
+    }
+    .newsletter-form {
+        align-items: flex-start;
+        margin: 0 auto;
+        max-width: 36rem;
+    }
+        .footer-block__newsletter:not(:only-child) .footer__newsletter {
+        justify-content: flex-start;
+        margin: 0;
+    }
 }
 @media screen and (min-width: 990px) {
     .header__menu-item {
@@ -9496,7 +9860,9 @@ button, input, select, textarea {
     text-decoration: underline;
     text-underline-offset: .3rem;
   }
-
+      .footer-block__heading {
+        font-size: calc(var(--font-heading-scale) * 1.8rem);
+    }
 }
 
 @media (min-width: 750px) and (max-width: 9999px) {

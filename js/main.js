@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initExpertsSlider();
     initRealResultsSlider();
     initAdvisorListPopup();
+    initShopNowBar();
 });
 
 /* ===================================
@@ -1218,4 +1219,23 @@ function initAdvisorListPopup() {
     overlay.addEventListener('click', function () {
         closeAllPopups();
     });
+}
+
+/* ===================================
+   Shop Now Bar (Scroll Effect)
+   =================================== */
+function initShopNowBar() {
+    const bar = document.querySelector('.shop-now-bar');
+    if (!bar) return;
+
+    function handleScroll() {
+        if (window.scrollY > 300) {
+            bar.style.transform = 'translateY(0)';
+        } else {
+            bar.style.transform = 'translateY(-100%)';
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
 }

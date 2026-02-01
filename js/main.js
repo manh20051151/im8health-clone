@@ -206,22 +206,36 @@ function initPillarsAccordion() {
    FAQ Accordion
    =================================== */
 function initFaqAccordion() {
-    const faqItems = document.querySelectorAll('.faq-item');
+    const faqContainer = document.querySelector('.Index_faq_accordion_lists_sides_innerleft_innerloops_new .accordion');
+    if (!faqContainer) return;
 
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
+    const items = faqContainer.querySelectorAll('ul > li');
+
+    items.forEach(item => {
+        const question = item.querySelector('.question');
+        const answer = item.querySelector('.answer');
+
+        if (!question || !answer) return;
 
         question.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
+            const isVisible = answer.style.display === 'block';
 
-            // Close all FAQs
-            faqItems.forEach(faq => {
-                faq.classList.remove('active');
+            // Close all others
+            items.forEach(otherItem => {
+                const otherAnswer = otherItem.querySelector('.answer');
+                if (otherAnswer) {
+                    otherAnswer.style.display = 'none';
+                    otherItem.classList.remove('open');
+                }
             });
 
-            // Toggle clicked FAQ
-            if (!isActive) {
-                item.classList.add('active');
+            // Toggle current
+            if (!isVisible) {
+                answer.style.display = 'block';
+                item.classList.add('open');
+            } else {
+                answer.style.display = 'none';
+                item.classList.remove('open');
             }
         });
     });

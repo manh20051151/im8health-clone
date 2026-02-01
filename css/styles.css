@@ -8229,7 +8229,9 @@ call-to-action-purchase#productpage_welcomekit_addtocart:hover {
 }
 
 
-
+.Index_faq_accordion_lists_sides_innerleft_innerloops_new .accordion>ul>li.open .question {
+    background: url(https://im8health.com/cdn/shop/t/121/assets/IM8_faq_minus.svg) no-repeat right center;
+}
 
 
 

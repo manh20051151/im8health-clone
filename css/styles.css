@@ -382,6 +382,85 @@ ul, ol {
     font-weight: 500;
     color: var(--color-text-primary);
 }
+/* ===================================
+   shop-now-bar
+   =================================== */
+.Meta_supplement_popup_mainpopup_new:not([style*=none]):not([style*=hidden])~* .shop-now-bar, .Meta_supplement_popup_mainpopup_new:not([style*=none]):not([style*=hidden])~.shop-now-bar, body:has(.Meta_supplement_popup_mainpopup_new:not([style*=none]):not([style*=hidden])) .shop-now-bar {
+    z-index: 1 !important;
+}
+.shop-now-bar {
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    margin: 0;
+    display: block;
+    transform: translateY(-100%);
+    transition: transform .3s cubic-bezier(.25, .46, .45, .94);
+}
+.shop-now-bar .page-width {
+    max-width: 100% !important;
+    padding: 0 56px !important;
+    background: #50000b;
+    border-bottom: 1px solid #50000B;
+}
+.shop-now-bar .main-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 88px;
+    padding: 0 !important;
+    grid-gap: 0px;
+    max-width: 1400px !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.shop_now_bar_left_new {
+    display: flex;
+    width: calc(100% - 320px);
+    padding-right: 10px;
+    align-items: center;
+}
+.shop_now_bar_left_new img {
+    width: 137px;
+    height: 35px;
+}
+.shop_now_bar_details_new {
+    color: #fff;
+    font-size: 18px;
+    height: 100%;
+    flex-grow: 1;
+    text-align: center;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+.shop_now_bar_right_new {
+    width: 320px;
+}
+.shop_now_bar_right_new a, .shop_now_bar_right_new span {
+    min-width: 100%;
+    padding: 5px;
+}
+a.button.buttonshop-now-bar{
+    border-radius: 100px;
+    background: #a40011;
+    padding: 13px 17px;
+    min-width: 272px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: .32px;
+    text-transform: uppercase;
+}
+
+a.button.buttonshop-now-bar:hover{
+    background: #50000b;
+}
+
+
 
 /* ===================================
    Header & Navigation
@@ -974,7 +1053,7 @@ details[open]>.header__submenu {
 }
 .single_menu_top_new .header__submenu.list-menu ul {
     padding: 3px 16px 6px 16px !important;
-    min-width: 133px;
+    min-width: 194px;
     max-width: 133px;
     margin: 0;
     list-style-type: none;
@@ -9080,7 +9159,7 @@ call-to-action-purchase#productpage_welcomekit_addtocart:hover {
 .announcement-bar .disclosure__list-wrapper {
     top: 140%;
     bottom: auto;
-    right: 0;
+    left: -200px;;
     transform: translateY(0);
     z-index: 1001;
     background-color: rgb(var(--color-background));
@@ -10121,3 +10200,13 @@ button, input, select, textarea {
 }
 
 
+
+/* Header Mega Menu Background Fix */
+/* Header Mega Menu Background Fix */
+.Header_mega_menu_inner_new {
+    background: #fff !important;
+    background-color: #fff !important;
+    padding-bottom: 40px !important;
+    opacity: 1 !important;
+    z-index: 100 !important;
+}

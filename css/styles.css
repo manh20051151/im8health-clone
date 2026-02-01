@@ -6945,6 +6945,7 @@ call-to-action-purchase#productpage_welcomekit_addtocart:hover {
    Meetthe Section
    =================================== */
 .Index_object_advisor_list_detail_2_loops_innerboxs_innerpopup_mainoverlay_new {
+    display: none;
     position: fixed;
     left: 0;
     background: rgba(242, 224, 221, .5);
@@ -6953,6 +6954,10 @@ call-to-action-purchase#productpage_welcomekit_addtocart:hover {
     top: 0;
     backdrop-filter: blur(8px);
     z-index: 9;
+    cursor: pointer;
+}
+.Index_object_advisor_list_detail_2_loops_innerboxs_innerpopup_mainoverlay_new.advisor_overlay_visible {
+    display: block;
 }
 .Index_object_advisor_list_main_new {
     padding: 104px 0;
@@ -7102,6 +7107,9 @@ call-to-action-purchase#productpage_welcomekit_addtocart:hover {
     padding: 24px;
     max-width: 480px;
 }
+.Index_object_advisor_list_detail_2_loops_innerboxs_mainpopup_new.advisor_popup_visible {
+    display: block;
+}
 .Index_object_advisor_list_detail_2_loops_innerboxs_innerpopup_new {
     height: 100%;
     position: relative;
@@ -7164,11 +7172,56 @@ call-to-action-purchase#productpage_welcomekit_addtocart:hover {
 .Index_object_advisor_list_detail_2_loops_innerboxs_innerpopup_innerrows_maintexts_new {
     padding: 30px 0;
     height: calc(100% - 228px);
+    min-height: 200px;
+    overflow: hidden;
 }
 
 .Index_object_advisor_list_detail_2_loops_innerboxs_innerpopup_innerrows_innertexts_new {
     height: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+    padding-right: 8px;
 }
+
+/* Popup advisor: scroll ở maintexts_new, ẩn thanh optiscroll, nội dung chảy bình thường */
+.Index_object_advisor_list_detail_2_loops_innerboxs_mainpopup_new .optiscroll-v,
+.Index_object_advisor_list_detail_2_loops_innerboxs_mainpopup_new .optiscroll-h {
+    display: none !important;
+}
+.Index_object_advisor_list_detail_2_loops_innerboxs_mainpopup_new .Index_object_advisor_list_detail_2_loops_innerboxs_innerpopup_innerrows_innertexts_new.optiscroll.is-enabled {
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+}
+.Index_object_advisor_list_detail_2_loops_innerboxs_mainpopup_new .optiscroll-content {
+    position: static !important;
+    overflow: visible !important;
+    height: auto !important;
+}
+
+/* Vùng scroll: maintexts_new (cả ảnh + chữ), thanh scroll màu đỏ */
+.Index_object_advisor_list_detail_2_loops_innerboxs_mainpopup_new .Index_object_advisor_list_detail_2_loops_innerboxs_innerpopup_innerrows_maintexts_new {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: #a40011 rgba(229, 213, 207, 0.5);
+}
+.Index_object_advisor_list_detail_2_loops_innerboxs_mainpopup_new .Index_object_advisor_list_detail_2_loops_innerboxs_innerpopup_innerrows_maintexts_new::-webkit-scrollbar {
+    width: 8px;
+}
+.Index_object_advisor_list_detail_2_loops_innerboxs_mainpopup_new .Index_object_advisor_list_detail_2_loops_innerboxs_innerpopup_innerrows_maintexts_new::-webkit-scrollbar-track {
+    background: rgba(229, 213, 207, 0.5);
+    border-radius: 4px;
+}
+.Index_object_advisor_list_detail_2_loops_innerboxs_mainpopup_new .Index_object_advisor_list_detail_2_loops_innerboxs_innerpopup_innerrows_maintexts_new::-webkit-scrollbar-thumb {
+    background: #a40011;
+    border-radius: 4px;
+}
+.Index_object_advisor_list_detail_2_loops_innerboxs_mainpopup_new .Index_object_advisor_list_detail_2_loops_innerboxs_innerpopup_innerrows_maintexts_new::-webkit-scrollbar-thumb:hover {
+    background: #8a000e;
+}
+
 .optiscroll_inner_new {
     padding-right: 12px;
 }

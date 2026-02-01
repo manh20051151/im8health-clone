@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initPillarsHealthToggle();
     initExpertsSlider();
     initRealResultsSlider();
+    initAdvisorListPopup();
 });
 
 /* ===================================
@@ -1158,5 +1159,49 @@ function initRealResultsSlider() {
                 this.wrapperEl.style.transitionTimingFunction = 'linear';
             }
         }
+    });
+}
+
+/* ===================================
+   Advisor list: click item → hiện popup tương ứng
+   =================================== */
+function initAdvisorListPopup() {
+    var container = document.querySelector('.Index_object_advisor_list_detail_2_loops_new.video_play_list_new');
+    var overlay = document.querySelector('.Index_object_advisor_list_detail_2_loops_innerboxs_innerpopup_mainoverlay_new');
+    if (!container || !overlay) return;
+
+    function closeAllPopups() {
+        overlay.classList.remove('advisor_overlay_visible');
+        container.querySelectorAll('.Index_object_advisor_list_detail_2_loops_innerboxs_mainpopup_new').forEach(function (popup) {
+            popup.classList.remove('advisor_popup_visible');
+        });
+    }
+
+    /* Click vào item (mainboxs) → mở popup cùng cấp */
+    container.querySelectorAll('.Index_object_advisor_list_detail_2_loops_mainboxs_new').forEach(function (box) {
+        var card = box.querySelector('.Index_object_advisor_list_detail_2_loops_innerboxs_mainsides_new');
+        var popup = box.querySelector('.Index_object_advisor_list_detail_2_loops_innerboxs_mainpopup_new');
+        if (!card || !popup) return;
+
+        card.addEventListener('click', function (e) {
+            e.preventDefault();
+            closeAllPopups();
+            overlay.classList.add('advisor_overlay_visible');
+            popup.classList.add('advisor_popup_visible');
+        });
+    });
+
+    /* Nút đóng trong popup */
+    container.querySelectorAll('.Index_object_advisor_list_detail_2_loops_innerboxs_innerpopup_innerrows_innerclose_new').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            closeAllPopups();
+        });
+    });
+
+    /* Click overlay → đóng */
+    overlay.addEventListener('click', function () {
+        closeAllPopups();
     });
 }

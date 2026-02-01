@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initPillarsHealthNav();
     initPillarsHealthToggle();
     initExpertsSlider();
+    initRealResultsSlider();
 });
 
 /* ===================================
@@ -1112,6 +1113,48 @@ function initExpertsSlider() {
         on: {
             init: function () {
                 // Thêm transition-timing-function: linear để chạy đều
+                this.wrapperEl.style.transitionTimingFunction = 'linear';
+            }
+        }
+    });
+}
+
+/* ===================================
+   Real Results Slider: Auto-scroll từ phải qua trái (giống Experts)
+   =================================== */
+function initRealResultsSlider() {
+    if (typeof Swiper === 'undefined') {
+        console.warn('[Real Results Slider] Swiper library not found');
+        return;
+    }
+
+    const resultsSlider = document.querySelector('.Index_object_real_results_slider');
+    if (!resultsSlider) return;
+
+    if (resultsSlider.swiper) {
+        resultsSlider.swiper.destroy(true, true);
+    }
+
+    new Swiper(resultsSlider, {
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        loop: true,
+        speed: 4000,
+        allowTouchMove: true,
+        freeMode: true,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+        },
+        watchSlidesProgress: true,
+        breakpoints: {
+            320: { slidesPerView: 1.2, spaceBetween: 16 },
+            640: { slidesPerView: 2, spaceBetween: 16 },
+            990: { slidesPerView: 'auto', spaceBetween: 16 }
+        },
+        on: {
+            init: function () {
                 this.wrapperEl.style.transitionTimingFunction = 'linear';
             }
         }

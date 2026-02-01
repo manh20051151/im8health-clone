@@ -6271,6 +6271,14 @@ div#homepage_comparison-chart_viewmore:hover {
     transition-timing-function: linear !important;
 }
 
+/* Khóa kích thước slide, tránh Swiper ghi đè */
+.Index_object_experts_list_slider .swiper-slide {
+    width: 400px !important;
+    min-width: 400px;
+    height: auto !important;
+    box-sizing: border-box;
+}
+
 .Index_object_experts_list_inneroverlay_innerloop_mainboxs_new {
     width: 400px !important;
 }
@@ -6808,12 +6816,21 @@ call-to-action-purchase#productpage_welcomekit_addtocart:hover {
     transition-timing-function: linear !important;
 }
 
+/* Khóa kích thước slide, tránh Swiper ghi đè */
+.Index_object_real_results_slider .swiper-slide {
+    width: 320px !important;
+    min-width: 320px;
+    height: auto !important;
+    box-sizing: border-box;
+}
+
 .Index_object_real_results_innerdetail_innerloops_mainboxs_new {
     border-radius: 16px;
     background: #fff;
     padding: 0 24px 24px 32px;
-    width: 320px;
+    width: 320px !important;
     height: auto !important;
+    box-sizing: border-box;
 }
 
 .Index_object_real_results_innerdetail_innerloops_innerboxs_header_innerdetails {

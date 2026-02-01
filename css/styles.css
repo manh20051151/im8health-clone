@@ -4933,13 +4933,6 @@ call-to-action-purchase#productpage_breakdown_addtocart:hover {
 }
 
 
-
-
-
-
-
-
-
 /* .pillars {
     padding: var(--spacing-4xl) 0;
     background: var(--color-bg-primary);
@@ -5061,7 +5054,232 @@ call-to-action-purchase#productpage_breakdown_addtocart:hover {
    90-Day Transformation Section
    =================================== */
 
-.transformation {
+.Index_object_table_column_main_new {
+    z-index: 9999 !important;
+}
+.Index_object_table_column_inner_new {
+    position: relative;
+}
+
+.Index_object_table_column_mainoverlay_new {
+    position: relative;
+    z-index: 1;
+    padding: 104px 0;
+    max-width: 83.359%;
+    margin: auto;
+}
+.Index_object_table_column_inneroverlay_innertitle_new {
+    text-align: center;
+}
+.Index_object_table_column_inneroverlay_maintable_new {
+    margin-top: 50px;
+}
+
+.Index_object_table_column_inneroverlay_innertable_new {
+    display: flex;
+    width: 100%;
+}
+.Index_object_table_column_inneroverlay_innertable_innerright_maincolumn_new {
+    width: 100%;
+    margin-top: 88px;
+}
+.Index_object_table_column_inneroverlay_innertable_innerright_innercolumn_new {
+    background: #f5eaea;
+    border: 1px solid #50000b;
+    margin-bottom: -30px;
+    border-radius: 0 0 12px 12px;
+}
+.Index_object_table_column_inneroverlay_innertable_innerright_maincolumn_new .Index_object_table_column_inneroverlay_innertable_innerright_innercolumn_new {
+    margin-top: -56px;
+    border-radius: 12px 0 0 12px;
+}
+.Index_object_table_column_inneroverlay_innertable_innerright_maincolumn_new .Index_object_table_column_inneroverlay_innertable_innerright_innercolumn_new.truncate {
+    border-radius: 12px 0 0 0 !important;
+}
+.Index_object_table_column_inneroverlay_innertable_innerright_mainboths_new {
+    height: 56px;
+    background: #f5eaea;
+    padding: 10px 16px 16px 16px;
+    margin-top: -56px;
+    border-radius: 12px 0 0 0;
+    border-top: 1px solid #50000b;
+}
+.Index_object_table_column_inneroverlay_innertable_innerright_maincolumn_new .Index_object_table_column_inneroverlay_innertable_innerright_mainboths_new {
+    background: #50000b;
+    border-left: none;
+    margin-top: 0;
+    border: 0;
+    height: 56px;
+}
+.Index_object_table_column_inneroverlay_innertable_innerright_innerboths_new {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.Index_object_table_detail_inneranswers_innertable_innerleft_innerboxs_boths_image_new {
+    margin: -56px auto auto auto;
+    background: 0 0;
+    height: 112px;
+    width: 85px;
+    position: relative;
+}
+.Index_object_table_column_inneroverlay_innertable_innerright_maincolumn_new .Index_object_table_detail_inneranswers_innertable_innerleft_innerboxs_boths_image_new {
+    height: 112px;
+    width: 85px;
+    margin-top: -85px;
+}
+.Index_object_table_detail_inneranswers_innertable_innerleft_innerboxs_boths_image_new img {
+    width: 100%;
+    position: absolute;
+    object-fit: contain;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100% !important;
+}
+.Index_object_table_column_inneroverlay_innertable_innerright_maincolumn_new .Index_object_tabs_table_detail_inneranswers_innertable_innerleft_innerboxs_boths_texts_new {
+    color: #fff;
+    flex-grow: 1;
+    text-align: left;
+    padding-left: 40px;
+}
+.Index_object_tabs_table_detail_inneranswers_innertable_innerleft_innerboxs_boths_texts_new {
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 135%;
+    padding-top: 4px;
+    text-align: left;
+    padding-left: 28px;
+}
+.Index_object_tabs_table_detail_inneranswers_innertable_innerleft_innerboxs_boths_texts_new {
+    padding-top: 10px;
+    flex-grow: 1;
+}
+.Index_object_table_column_inneroverlay_innertable_innerright_maincolumn_new .Index_object_table_column_inneroverlay_innertable_innerright_innerloops_mainboxs_new {
+    padding: 5px 10px 5px 48px;
+    width: 100%;
+}
+.Index_object_table_column_inneroverlay_innertable_innerright_innerloops_mainboxs_new {
+    padding: 10px 10px 10px 40px;
+    height: 56px;
+    border-top: 1px solid #50000b;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.Index_object_table_column_inneroverlay_innertable_innerright_maincolumn_new .Index_object_table_column_inneroverlay_innertable_innerright_innerloops_innerboxs_new {
+    justify-content: start;
+    width: 100%;
+}
+.Index_object_table_column_inneroverlay_innertable_innerright_innerloops_innerboxs_new {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 0 12px;
+    color: #50000b;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 135%;
+}
+.Index_object_table_column_inneroverlay_innertable_innerright_innerloops_mainboxs_new .Index_object_table_column_inneroverlay_innertable_innerright_innerloops_innerboxs_new svg {
+    width: 24px;
+    height: auto;
+}
+.Index_object_table_column_inneroverlay_innertable_innerright_maincolumn_new .Index_object_table_column_inneroverlay_innertable_innerright_innerloops_innerboxs_new svg {
+    width: 24px;
+    height: auto;
+}
+
+.Index_object_table_column_inneroverlay_innertable_innerright_innerloops_innerboxs_new svg {
+    max-width: 100%;
+}
+.Index_object_table_column_inneroverlay_innertable_innerright_innerloops_innerboxs_new span.highlight {
+    font-size: 16px;
+    font-weight: 700;
+    float: left;
+}
+.Index_object_table_column_inneroverlay_innertable_innerright_innerloops_innerboxs_new span {
+    color: #50000b;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 135%;
+    width: 100%;
+    text-align: left;
+    width: calc(100% - 24px);
+    padding-left: 12px;
+}
+.Index_object_table_column_inneroverlay_innertable_innerright_innerloops_innerboxs_new span.details {
+    float: left;
+}
+
+.Index_object_table_column_inneroverlay_innertable_innerright_innerloops_innerboxs_new div {
+    flex-grow: 1;
+}
+
+.Index_object_table_column_inneroverlay_innertable_innerright_maincolumn_new .Index_object_table_column_inneroverlay_innertable_innerright_innercolumn_new.truncate.last_child {
+    border-radius: 0 12px 0 0 !important;
+}
+.Index_object_table_column_inneroverlay_innertable_innerright_maincolumn_new .Index_object_table_column_inneroverlay_innertable_innerright_innercolumn_new.last_child {
+    border-radius: 0 12px 12px 0 !important;
+    background-color: #1d5F4E40;
+}
+
+.Index_object_table_column_inneroverlay_innertable_innerright_mainboths_new.last_child {
+    border-radius: 0 12px 0 0;
+}
+
+.Index_object_table_column_inneroverlay_innertable_innerright_innerloops_innerboxs_new span.ag1 {
+    color: #1e3B32B8;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 135%;
+    width: 100%;
+    text-align: left;
+    width: calc(100% - 24px);
+}
+
+.Index_object_table_column_inneroverlay_innertable_innerright_innerloops_innerboxs_new span.highlight.ag1 {
+    color: #18332a;
+}
+.ag1 {
+    color: #2d3b32 !important;
+}
+.Index_object_table_column_see_more {
+    background-color: #f5eaea;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #50000b;
+    border-radius: 0 0 12px 12px;
+    border-top: 0;
+    cursor: pointer;
+    margin-top: 30px;
+}
+.Index_object_table_column_inneroverlay_mainbutton_new {
+    padding-top: 62px;
+    text-align: center;
+}
+div#homepage_comparison-chart_viewmore {
+    border-radius: 100px;
+    background: #a40011;
+    padding: 13px 17px;
+    min-width: 272px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: .32px;
+    text-transform: uppercase;
+}
+div#homepage_comparison-chart_viewmore:hover {
+    background: #50000b;
+}
+
+/* .transformation {
     padding: var(--spacing-4xl) 0;
     background: var(--color-bg-secondary);
 }
@@ -5135,7 +5353,7 @@ call-to-action-purchase#productpage_breakdown_addtocart:hover {
 .btn-outline:hover {
     background: var(--color-primary);
     color: white;
-}
+} */
 
 /* ===================================
    Testimonials Section

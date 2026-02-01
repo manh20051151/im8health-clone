@@ -5649,10 +5649,10 @@ div#homepage_comparison-chart_viewmore:hover {
 }
 
 .pillars-health__nav-item--active {
-    background: linear-gradient(145deg, var(--ph-red-algae) 0%, var(--ph-burgundy) 60%, var(--ph-burgundy-dark) 100%);
-    border-color: var(--ph-red-algae);
-    box-shadow: 0 8px 32px rgba(164, 0, 17, 0.18), 0 2px 8px rgba(80, 0, 11, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.12);
-    transform: translateX(4px);
+    background: linear-gradient(145deg, var(--ph-red-algae) 0%, var(--ph-burgundy) 60%, var(--ph-burgundy-dark) 100%) !important;
+    border-color: var(--ph-red-algae) !important;
+    box-shadow: 0 8px 32px rgba(164, 0, 17, 0.18), 0 2px 8px rgba(80, 0, 11, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+    transform: translateX(4px) !important;
 }
 
 .pillars-health__nav-item {
@@ -5824,6 +5824,11 @@ div#homepage_comparison-chart_viewmore:hover {
     pointer-events: none;
     z-index: 0;
 }
+
+.pillars-health__panel-content {
+    display: none;
+}
+
 .pillars-health__panel-content--active {
     display: block;
     animation: phPanelFadeIn var(--ph-duration-normal) var(--ph-ease-out);
@@ -6131,6 +6136,17 @@ div#homepage_comparison-chart_viewmore:hover {
 .pillars-health__feature-icon--longevity {
     background: linear-gradient(135deg, rgba(231, 141, 45, 0.1) 0%, rgba(231, 141, 45, 0.03) 100%);
     color: var(--ph-gold);
+}
+
+
+.pillars-health__nav-item:hover {
+    border-color: rgba(164, 0, 17, 0.15);
+    box-shadow: 0 6px 28px rgba(164, 0, 17, 0.09), 0 2px 8px rgba(80, 0, 11, 0.04);
+    transform: translateX(3px);
+}
+.pillars-health__nav-item:hover .pillars-health__nav-arrow {
+    opacity: 0.4;
+    transform: translateX(0);
 }
 
 /* .testimonials {

@@ -4624,8 +4624,323 @@ section#organSystems {
 /* ===================================
    5 Pillars Section
    =================================== */
+.Index_breakdown_lists_inner_new {
+    position: relative;
+}
+.Index_breakdown_lists_mainstatic_new {
+    width: 46.667%;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.Index_breakdown_lists_innerstatic_new {
+    height: 100%;
+}
+.Index_breakdown_lists_innerstatic_videoimage_new {
+    position: relative;
+}
+.Index_breakdown_lists_innerstatic_videoimage_new {
+    height: 100%;
+    position: relative;
+}
+.Index_breakdown_lists_innerstatic_videoimage_new::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(245, 234, 234, 0.7);
+    z-index: 1;
+    pointer-events: none;
+}
+.Index_breakdown_lists_innerstatic_videoimage_new > video, .Index_breakdown_lists_innerstatic_videoimage_new > img, .Index_breakdown_lists_innerstatic_videoimage_new > .shopify-video-wrapper, .Index_breakdown_lists_innerstatic_videoimage_new > .media {
+    position: relative;
+    z-index: 0;
+}
+.Index_breakdown_lists_innerstatic_videoimage_new img {
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100% !important;
+}
+.Index_breakdown_lists_mainsides_new {
+    position: relative;
+    z-index: 2;
+}
+.Index_breakdown_lists_innersides_new {
+    display: flex;
+}
+.Index_breakdown_lists_innersides_mainleft_new {
+    width: 46.667%;
+    padding: 64px 0 0 56px;
+}
 
-.pillars {
+.Index_breakdown_lists_innersides_innerleft_new {
+    max-width: 350px;
+}
+.Common_inner_title_new h2 {
+    color: #50000b;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -.8px;
+    margin: 0;
+}
+
+.Index_breakdown_lists_innersides_innerleft_innertitle_new h2 {
+    color: #fff;
+}
+
+.Index_breakdown_lists_innersides_innerleft_mainbutton_new {
+    padding-top: 24px;
+}
+.Index_breakdown_lists_innersides_mainright_new {
+    width: calc(100% - 46.667%);
+    padding: 80px 168px 64px 168px;
+    position: relative;
+}
+.Index_breakdown_lists_innersides_innerright_new {
+    display: flex;
+    align-items: center;
+}
+.Index_breakdown_lists_innersides_innerright_maincenter_new {
+    position: absolute;
+    left: -189px;
+    top: 82px;
+    width: 378px;
+}
+.Index_breakdown_lists_innersides_innerright_innercenter_new {
+    width: 100%;
+}
+
+.Index_breakdown_lists_innersides_innerright_innercenter_innerboths_videoimage_new {
+    position: relative;
+}
+.im8-savings-badge {
+    position: absolute;
+    left: 0;
+    bottom: 6%;
+    transform: translate(calc(-75% - 16px), 0);
+    background: #50000B;
+    color: #FFF;
+    border-radius: 999px;
+    width: clamp(220px, 24vw, 300px);
+    height: clamp(220px, 24vw, 300px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 18px;
+    z-index: 3;
+    box-shadow: 0 10px 30px rgba(80, 0, 11, 0.25);
+    pointer-events: none;
+}
+
+.im8-savings-badge__title {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.95;
+    margin-bottom: 20px;
+}
+.im8-savings-badge__per, .im8-savings-badge__amount {
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.15;
+    font-family: 'ABC Arizona Flare', sans-serif;
+}
+.im8-savings-badge__per {
+    margin-bottom: 20px;
+}
+
+.im8-savings-badge__per, .im8-savings-badge__amount {
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.15;
+    font-family: 'ABC Arizona Flare', sans-serif;
+}
+.im8-savings-badge__footnote {
+    font-size: 13px;
+    line-height: 1.3;
+    opacity: 0.9;
+}
+.im8-savings-badge__footnote .badge-footnote--desktop {
+    display: inline;
+}
+.im8-savings-badge__footnote .badge-footnote--mobile {
+    display: none;
+}
+.Index_breakdown_lists_innersides_innerright_innercenter_innerboths_videoimage_new img {
+    width: 100%;
+    display: flex;
+}
+
+.Index_breakdown_lists_innersides_innerright_maindetail_new {
+    width: 100%;
+    max-width: 432px;
+    margin: auto;
+}
+
+.Index_breakdown_lists_innersides_innerright_innerdetail_new {
+    max-width: 86.81%;
+    margin: 0 0 0 auto;
+}
+
+.Index_breakdown_lists_innersides_innerright_innerdetail_innertitle_new h2 {
+    text-align: center;
+}
+.Common_inner_title_new h2 {
+    color: #50000b;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -.8px;
+    margin: 0;
+}
+
+.Index_breakdown_lists_innersides_innerright_innerdetail_mainloops_new {
+    padding-top: 56px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-right: 25px;
+    padding-left: 33px;
+}
+.Index_breakdown_lists_innersides_innerright_innerdetail_innerloops_mainboxs_new {
+    margin-bottom: 17px;
+    position: relative;
+}
+.Index_breakdown_lists_innersides_innerright_innerdetail_innerloops_mainboxs_new:before {
+    position: absolute;
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: url(https://im8health.com/cdn/shop/t/121/assets/shape.svg) no-repeat center center;
+    transform: translate(0, -50%);
+    top: 50%;
+    left: -29px;
+}
+.Index_breakdown_lists_innersides_innerright_innerdetail_innerloops_innerboxs_new {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Index_breakdown_lists_innersides_innerright_innerdetail_innerloops_innerboxs_infos_new p {
+    margin: 0;
+    color: #50000b;
+    font-size: 16px;
+    line-height: 135%;
+}
+
+.Index_breakdown_lists_innersides_innerright_innerdetail_innerloops_mainboxs_new:after {
+    position: absolute;
+    content: '';
+    width: 64px;
+    height: 1px;
+    background: #50000b;
+    top: 50%;
+    left: -91px;
+    transform: translate(0, -50%);
+}
+.Index_breakdown_lists_innersides_innerright_innerdetail_maintexts_new {
+    padding-top: 32px;
+}
+.Index_breakdown_lists_innersides_innerright_innerdetail_innertexts_new {
+    border-radius: 16px;
+    border: 1px solid #50000b;
+    background: #f5eaea;
+}
+.Index_breakdown_lists_innersides_innerright_innerdetail_innertexts_1_sides_new {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 25px 11px 33px;
+}
+.Index_breakdown_lists_innersides_innerright_innerdetail_innertexts_1_sides_infostext_new p {
+    margin: 0;
+    color: #50000b;
+    font-size: 16px;
+    line-height: 135%;
+}
+.Index_breakdown_lists_innersides_innerright_innerdetail_innertexts_1_sides_pricetext_new {
+    color: #50000b;
+    text-align: right;
+    font-family: var(--font-nb-architekt);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 135%;
+    letter-spacing: .32px;
+    text-transform: uppercase;
+}
+.Index_breakdown_lists_innersides_innerright_innerdetail_innertexts_2_new {
+    border-radius: 0 0 16px 16px;
+    border-top: 1px solid #50000b;
+    background: #fff;
+}
+.Index_breakdown_lists_innersides_innerright_innerdetail_innertexts_2_sides_new {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 25px 16px 33px;
+}
+
+
+.Index_breakdown_lists_innersides_innerright_innerdetail_innertexts_2_sides_infostext_new p {
+    color: #50000b;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 135%;
+    margin: 0;
+}
+.Index_breakdown_lists_innersides_innerright_innerdetail_innertexts_2_sides_pricetext_new {
+    color: #50000b;
+    text-align: right;
+    font-family: var(--font-nb-architekt);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 135%;
+    letter-spacing: .32px;
+    text-transform: uppercase;
+}
+
+.Index_breakdown_lists_innersides_innerright_innerdetail_mainbutton_new {
+    display: none;
+    padding-top: 21px;
+    text-align: center;
+}
+call-to-action-purchase#productpage_breakdown_addtocart {
+    border-radius: 100px;
+    background: #a40011;
+    padding: 13px 17px;
+    min-width: 272px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: .32px;
+    text-transform: uppercase;
+}
+
+call-to-action-purchase#productpage_breakdown_addtocart:hover {
+    background: #50000b;
+}
+
+
+
+
+
+
+
+
+
+/* .pillars {
     padding: var(--spacing-4xl) 0;
     background: var(--color-bg-primary);
 }
@@ -4740,7 +5055,7 @@ section#organSystems {
     background: var(--color-bg-tertiary);
     border-radius: var(--radius-sm);
     color: var(--color-text-secondary);
-}
+} */
 
 /* ===================================
    90-Day Transformation Section
@@ -6309,5 +6624,10 @@ button, input, select, textarea {
     }
         .organ-systems__interactive {
         gap: 64px;
+    }
+}
+@media screen and (min-width: 1400px) {
+    .Index_breakdown_lists_innersides_innerright_maindetail_new {
+        min-width: 500px;
     }
 }

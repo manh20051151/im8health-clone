@@ -8111,7 +8111,139 @@ call-to-action-purchase#productpage_welcomekit_addtocart:hover {
    FAQs Section
    =================================== */
 
-.faqs {
+.Index_faq_accordion_lists_sides_new {
+    display: flex;
+}
+.Index_faq_accordion_lists_sides_mainleft_new {
+    width: 50%;
+    padding: 40px 120px 40px 56px;
+    align-self: center;
+    height: 100%;
+    position: relative;
+}
+.Index_faq_accordion_lists_sides_innerleft_new {
+    max-width: 79.414%;
+    margin: 0 0 0 auto;
+}
+.Index_faq_accordion_lists_sides_innerleft_innertitle_new h2 {
+    font-size: 80px;
+    color: #ff9693;
+}
+.Index_faq_accordion_lists_sides_innerleft_innerloops_new {
+    padding-top: 8px;
+}
+
+.Index_faq_accordion_lists_sides_innerleft_innerloops_new .accordion {
+    padding: 0;
+    margin: 0;
+}
+.Index_faq_accordion_lists_sides_innerleft_innerloops_new .accordion>ul {
+    margin: 0;
+    list-style-type: none;
+}
+.Index_faq_accordion_lists_sides_innerleft_innerloops_new .accordion>ul>li {
+    margin: 0;
+    border-bottom: 1px solid #fff;
+}
+.Index_faq_accordion_lists_sides_innerleft_innerloops_new .accordion>ul>li .question {
+    border: none;
+    padding: 16px 24px 16px 0;
+}
+
+.Index_faq_accordion_lists_sides_innerleft_innerloops_new .accordion>ul>li .question {
+    background: url(https://im8health.com/cdn/shop/t/121/assets/IM8_faq_plus.svg) no-repeat right center;
+}
+.Index_faq_accordion_lists_sides_innerleft_innerloops_new .accordion>ul>li .question h3 {
+    margin: 0;
+    color: #fff;
+    font-family: var(--font-body-family);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 135%;
+}
+
+.Index_faq_accordion_lists_sides_innerleft_innerloops_new .accordion>ul>li .answer {
+    padding: 0 0 16px 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 135%;
+}
+.Index_faq_accordion_lists_sides_innerleft_innerloops_new .accordion>ul>li .answer p {
+    margin: 0;
+    padding-bottom: 12px;
+}
+
+.Index_faq_accordion_lists_sides_innerleft_innerloops_new .accordion>ul>li .answer p:last-child {
+    padding-bottom: 0;
+}
+
+.Index_faq_accordion_lists_sides_innerleft_innerbutton_new {
+    padding-top: 24px;
+}
+.button_brown_new {
+    background: #50000b;
+}
+
+.Index_faq_accordion_lists_sides_innerleft_innerbutton_new .button {
+    min-width: 264px;
+    border-radius: 100px;
+    /* background: #a40011; */
+    padding: 13px 17px;
+    min-width: 272px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: .32px;
+    text-transform: uppercase;
+
+}
+
+.Index_faq_accordion_lists_sides_mainright_new {
+    width: 50%;
+}
+
+
+.Index_faq_accordion_lists_sides_innerright_new {
+    height: 100%;
+    position: relative;
+}
+.Index_faq_accordion_lists_sides_innerright_videoimage_new {
+    padding-bottom: 89.307%;
+    min-height: 872px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.Index_faq_accordion_lists_sides_innerright_videoimage_new img {
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100% !important;
+    object-position: center left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .faqs {
     padding: var(--spacing-4xl) 0;
     background: var(--color-bg-primary);
 }
@@ -8175,7 +8307,7 @@ call-to-action-purchase#productpage_welcomekit_addtocart:hover {
     font-size: var(--text-sm);
     color: var(--color-text-secondary);
     line-height: 1.8;
-}
+} */
 
 /* ===================================
    HSA/FSA Section
@@ -8937,11 +9069,7 @@ button, input, select, textarea {
 .countries {
     padding-top: .6rem;
 }
-.list-unstyled {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
+
 .disclosure__item {
     position: relative;
 }
@@ -9623,3 +9751,5 @@ button, input, select, textarea {
     text-align: center;
     box-sizing: border-box;
 }
+
+

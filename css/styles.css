@@ -7265,6 +7265,17 @@ call-to-action-purchase#productpage_welcomekit_addtocart:hover {
 
 .Index_object_advisor_list_detail_2_loops_innerboxs_innerpopup_innerrows_innertexts_button_new a {
     min-width: 100%;
+    border-radius: 100px;
+    background: #a40011;
+    padding: 13px 17px;
+    min-width: 272px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: .32px;
+    text-transform: uppercase;
+
 }
 .Index_object_advisor_list_detail_1_boths_innertitle_new h2 {
     text-align: center;
@@ -8726,4 +8737,18 @@ button, input, select, textarea {
     .Index_breakdown_lists_innersides_innerright_maindetail_new {
         min-width: 500px;
     }
+}
+
+/* Advisor Popup Learn More Button Full Width */
+.Index_object_advisor_list_detail_2_loops_innerboxs_innerpopup_innerrows_innertexts_button_new {
+    width: 100%;
+}
+
+.Index_object_advisor_list_detail_2_loops_innerboxs_innerpopup_innerrows_innertexts_button_new a.button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
 }
